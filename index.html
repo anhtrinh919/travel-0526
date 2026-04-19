@@ -48,7 +48,8 @@
       <span class="date">16 May · Friday</span>
     </div>
     <div class="day-title">
-      <h2><em>Arrival.</em><br/>The sea at Tuy&nbsp;Hòa.</h2>
+      <h2><em>Arrival</em> at Tuy Hòa.</h2>
+      <button class="day-more" type="button" data-day="1">Full day ↗</button>
     </div>
     <div class="tiles">
       <article class="tile" data-img="nghinh_phong">
@@ -83,7 +84,8 @@
       <span class="date">17 May · Saturday</span>
     </div>
     <div class="day-title">
-      <h2>South by <em>motorbike.</em></h2>
+      <h2>South by <em>motorbike</em>.</h2>
+      <button class="day-more" type="button" data-day="2">Full day ↗</button>
     </div>
     <div class="tiles">
       <article class="tile" data-img="mui_dien">
@@ -118,7 +120,8 @@
       <span class="date">18 May · Sunday</span>
     </div>
     <div class="day-title">
-      <h2>North. <em>Yellow flowers,</em><br/>green cliffs.</h2>
+      <h2>North, to the <em>yellow flowers</em>.</h2>
+      <button class="day-more" type="button" data-day="3">Full day ↗</button>
     </div>
     <div class="tiles">
       <article class="tile" data-img="hon_yen">
@@ -153,7 +156,8 @@
       <span class="date">19 May · Monday</span>
     </div>
     <div class="day-title">
-      <h2>The <em>basalt</em> coast<br/>to Quy&nbsp;Nhơn.</h2>
+      <h2>The <em>basalt</em> coast to Quy Nhơn.</h2>
+      <button class="day-more" type="button" data-day="4">Full day ↗</button>
     </div>
     <div class="tiles">
       <article class="tile" data-img="ganh_da_dia">
@@ -188,7 +192,8 @@
       <span class="date">20 May · Tuesday</span>
     </div>
     <div class="day-title">
-      <h2>Island day.<br/><em>Hòn Khô</em> by canoe.</h2>
+      <h2><em>Hòn Khô</em> by canoe.</h2>
+      <button class="day-more" type="button" data-day="5">Full day ↗</button>
     </div>
     <div class="tiles">
       <article class="tile" data-img="nhon_hai">
@@ -223,7 +228,8 @@
       <span class="date">21 May · Wednesday</span>
     </div>
     <div class="day-title">
-      <h2>Ghềnh Ráng<br/>&amp; the <em>egg stones.</em></h2>
+      <h2>Ghềnh Ráng &amp; the <em>egg stones</em>.</h2>
+      <button class="day-more" type="button" data-day="6">Full day ↗</button>
     </div>
     <div class="tiles">
       <article class="tile" data-img="trung_luong">
@@ -258,7 +264,8 @@
       <span class="date">22 May · Thursday</span>
     </div>
     <div class="day-title">
-      <h2>North to <em>Đà Nẵng.</em><br/>Nothing on the list.</h2>
+      <h2>North to <em>Đà Nẵng</em>. Nothing on the list.</h2>
+      <button class="day-more" type="button" data-day="7">Full day ↗</button>
     </div>
     <div class="tiles tiles--sparse">
       <article class="tile" data-img="car">
@@ -283,7 +290,8 @@
       <span class="date">23 May · Friday</span>
     </div>
     <div class="day-title">
-      <h2>Home. <em>Slow coffee,</em><br/>then the flight.</h2>
+      <h2>Home. <em>Slow coffee</em>, then the flight.</h2>
+      <button class="day-more" type="button" data-day="8">Full day ↗</button>
     </div>
     <div class="tiles tiles--sparse">
       <article class="tile" data-img="coffee">
@@ -306,6 +314,22 @@
   </footer>
 
 </main>
+
+<!-- ====== DETAIL DRAWER ====== -->
+<aside class="sheet" id="sheet" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="sheet-backdrop" data-close></div>
+  <div class="sheet-panel">
+    <header class="sheet-head">
+      <div>
+        <span class="sheet-num" id="sheet-num"></span>
+        <span class="sheet-date" id="sheet-date"></span>
+      </div>
+      <button class="sheet-close" type="button" data-close aria-label="Close">×</button>
+    </header>
+    <h3 class="sheet-title" id="sheet-title"></h3>
+    <div class="sheet-body" id="sheet-body"></div>
+  </div>
+</aside>
 
 <script src="script.js"></script>
 </body>
