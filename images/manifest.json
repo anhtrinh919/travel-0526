@@ -363,5 +363,26 @@
       "images/cache/banh_canh-449c90d5ad.jpg"
     ],
     "credit": "Vietnamese street food — Unsplash"
+  },
+  "see-explorascience": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Melaka_Planetarium_-_Interior.jpg/1280px-Melaka_Planetarium_-_Interior.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Melaka_Planetarium_-_Interior.jpg/1280px-Melaka_Planetarium_-_Interior.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Planetarium interior — Wikimedia"
+  },
+  "see-qnbeach": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Xuan_Dieu_Avenue_Quy_Nhon_2.JPG/1280px-Xuan_Dieu_Avenue_Quy_Nhon_2.JPG",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/6/64/Xuan_Dieu_Avenue_Quy_Nhon_2.JPG/1280px-Xuan_Dieu_Avenue_Quy_Nhon_2.JPG&output=jpg&q=85&v=3"
+    ],
+    "credit": "Xuân Diệu, Quy Nhơn — Wikimedia"
+  },
+  "see-thinai": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/C%E1%BA%A7u_Th%E1%BB%8B_N%E1%BA%A1i%2C_Quy_Nh%C6%A1n.JPG/1280px-C%E1%BA%A7u_Th%E1%BB%8B_N%E1%BA%A1i%2C_Quy_Nh%C6%A1n.JPG",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/5/5c/C%E1%BA%A7u_Th%E1%BB%8B_N%E1%BA%A1i%2C_Quy_Nh%C6%A1n.JPG/1280px-C%E1%BA%A7u_Th%E1%BB%8B_N%E1%BA%A1i%2C_Quy_Nh%C6%A1n.JPG&output=jpg&q=85&v=3"
+    ],
+    "credit": "Cầu Thị Nại — Wikimedia"
   }
 }

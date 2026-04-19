@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>Bờ biển miền Trung — 16→23 May</title>
-<meta name="description" content="Eight days along the coast of Phú Yên, Quy Nhơn and Đà Nẵng." />
+<title>Bờ biển miền Trung — 15→23 May</title>
+<meta name="description" content="Nine days along the coast of Phú Yên, Quy Nhơn and Đà Nẵng." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;700&display=swap" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,6 +23,7 @@
   <div class="splash-shade"></div>
   <header class="splash-meta">
     <span class="kicker">A coastal drift · Spring ’26</span>
+    <button class="route-btn" type="button" id="open-route">See the route ↗</button>
   </header>
   <div class="splash-center">
     <h1 class="splash-title">
@@ -29,7 +31,7 @@
       <span class="splash-word" data-word="1">Quy Nhơn</span>
       <span class="splash-word" data-word="2">Đà Nẵng</span>
     </h1>
-    <p class="splash-dates"><span>16</span><em>—</em><span>23 May</span></p>
+    <p class="splash-dates"><span>15</span><em>—</em><span>23 May</span></p>
   </div>
   <footer class="splash-cue">
     <span class="dot"></span>
@@ -39,19 +41,24 @@
 
 <main class="reel">
 
-  <!-- DAY 1 -->
+  <!-- DAY 1 — May 15 — Arrival -->
   <section class="day" id="day-1" data-img="tuy_hoa_beach">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
       <span class="num">01</span>
-      <span class="date">16 May · Friday</span>
+      <span class="date">15 May · Friday</span>
     </div>
     <div class="day-title">
       <h2><em>Arrival</em> at Tuy Hòa.</h2>
       <button class="day-more" type="button" data-day="1">Full day ↗</button>
     </div>
     <div class="tiles">
+      <article class="tile" data-tile="d1-move" data-img="move-car3">
+        <span class="t-kicker">Move</span>
+        <span class="t-label">Airport → city</span>
+        <span class="t-sub">13:35 landing · taxi</span>
+      </article>
       <article class="tile" data-tile="d1-see" data-img="nghinh_phong">
         <span class="t-kicker">See</span>
         <span class="t-label">Tháp Nghinh Phong</span>
@@ -67,21 +74,16 @@
         <span class="t-label">Huy Tùng</span>
         <span class="t-sub">Heritage Phú Yên coffee</span>
       </article>
-      <article class="tile" data-tile="d1-move" data-img="move-car3">
-        <span class="t-kicker">Move</span>
-        <span class="t-label">Airport → city</span>
-        <span class="t-sub">13:30 landing · taxi</span>
-      </article>
     </div>
   </section>
 
-  <!-- DAY 2 -->
+  <!-- DAY 2 — May 16 — South Phú Yên -->
   <section class="day" id="day-2" data-img="mui_dien">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
       <span class="num">02</span>
-      <span class="date">17 May · Saturday</span>
+      <span class="date">16 May · Saturday</span>
     </div>
     <div class="day-title">
       <h2>South by <em>motorbike</em>.</h2>
@@ -111,13 +113,13 @@
     </div>
   </section>
 
-  <!-- DAY 3 -->
+  <!-- DAY 3 — May 17 — North Phú Yên -->
   <section class="day" id="day-3" data-img="bai_xep_yellow">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
       <span class="num">03</span>
-      <span class="date">18 May · Sunday</span>
+      <span class="date">17 May · Sunday</span>
     </div>
     <div class="day-title">
       <h2>North, to the <em>yellow flowers</em>.</h2>
@@ -147,13 +149,13 @@
     </div>
   </section>
 
-  <!-- DAY 4 -->
+  <!-- DAY 4 — May 18 — Transfer to Quy Nhơn -->
   <section class="day" id="day-4" data-img="ganh_da_dia">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
       <span class="num">04</span>
-      <span class="date">19 May · Monday</span>
+      <span class="date">18 May · Monday</span>
     </div>
     <div class="day-title">
       <h2>The <em>basalt</em> coast to Quy Nhơn.</h2>
@@ -183,123 +185,149 @@
     </div>
   </section>
 
-  <!-- DAY 5 -->
-  <section class="day" id="day-5" data-img="hon_kho">
+  <!-- DAY 5 — May 19 — Slow Quy Nhơn (NEW) -->
+  <section class="day" id="day-5" data-img="ghenh_rang">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
       <span class="num">05</span>
-      <span class="date">20 May · Tuesday</span>
+      <span class="date">19 May · Tuesday</span>
     </div>
     <div class="day-title">
-      <h2><em>Hòn Khô</em> by canoe.</h2>
+      <h2>A <em>slow</em> day in Quy Nhơn.</h2>
       <button class="day-more" type="button" data-day="5">Full day ↗</button>
     </div>
-    <div class="tiles">
-      <article class="tile" data-tile="d5-from" data-img="nhon_hai">
-        <span class="t-kicker">From</span>
-        <span class="t-label">Nhơn Hải village</span>
-        <span class="t-sub">Ride in, skip the city tour</span>
+    <div class="tiles tiles--three">
+      <article class="tile" data-tile="d5-see" data-img="see-qnbeach">
+        <span class="t-kicker">See</span>
+        <span class="t-label">Xuân Diệu</span>
+        <span class="t-sub">Promenade, morning</span>
       </article>
-      <article class="tile" data-tile="d5-snorkel" data-img="hon_kho">
-        <span class="t-kicker">Snorkel</span>
-        <span class="t-label">Hòn Khô</span>
-        <span class="t-sub">Pier tour · ~350k</span>
-      </article>
-      <article class="tile" data-tile="d5-eat" data-img="eat-banhmi">
+      <article class="tile" data-tile="d5-eat" data-img="eat-street">
         <span class="t-kicker">Eat</span>
-        <span class="t-label">Hương Dương</span>
-        <span class="t-sub">Village seafood · jumping shrimp pancakes</span>
+        <span class="t-label">Ngô Văn Sở</span>
+        <span class="t-sub">Street skewers · Chè Nhớ</span>
       </article>
-      <article class="tile" data-tile="d5-ride" data-img="move-bike3">
-        <span class="t-kicker">Ride</span>
-        <span class="t-label">Bike</span>
-        <span class="t-sub">Life jackets for the kid</span>
+      <article class="tile" data-tile="d5-sip" data-img="sip-cafe2">
+        <span class="t-kicker">Sip</span>
+        <span class="t-label">Surf Bar</span>
+        <span class="t-sub">Sunset on the sand</span>
       </article>
     </div>
   </section>
 
-  <!-- DAY 6 -->
-  <section class="day" id="day-6" data-img="ghenh_rang">
+  <!-- DAY 6 — May 20 — Hòn Khô morning, rest, evening observatory -->
+  <section class="day" id="day-6" data-img="hon_kho">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
       <span class="num">06</span>
-      <span class="date">21 May · Wednesday</span>
+      <span class="date">20 May · Wednesday</span>
     </div>
     <div class="day-title">
-      <h2>Ghềnh Ráng &amp; the <em>egg stones</em>.</h2>
+      <h2><em>Hòn Khô</em>, then the stars.</h2>
       <button class="day-more" type="button" data-day="6">Full day ↗</button>
     </div>
     <div class="tiles">
-      <article class="tile" data-tile="d6-chill" data-img="trung_luong">
-        <span class="t-kicker">Chill</span>
-        <span class="t-label">Trung Lương</span>
-        <span class="t-sub">Entrance fee · easy morning</span>
+      <article class="tile" data-tile="d6-snorkel" data-img="hon_kho">
+        <span class="t-kicker">Snorkel</span>
+        <span class="t-label">Hòn Khô</span>
+        <span class="t-sub">Pier tour · ~350k</span>
       </article>
-      <article class="tile" data-tile="d6-see" data-img="egg_stone">
-        <span class="t-kicker">See</span>
-        <span class="t-label">Bãi Đá Trứng</span>
-        <span class="t-sub">Sea-polished eggs</span>
-      </article>
-      <article class="tile" data-tile="d6-eat" data-img="eat-street">
+      <article class="tile" data-tile="d6-eat" data-img="eat-banhmi">
         <span class="t-kicker">Eat</span>
-        <span class="t-label">Ngô Văn Sở</span>
-        <span class="t-sub">Street skewers · Chè Nhớ for dessert</span>
+        <span class="t-label">Nhơn Hải</span>
+        <span class="t-sub">Fresh snail &amp; squid, village table</span>
       </article>
-      <article class="tile" data-tile="d6-ride" data-img="move-bike4">
-        <span class="t-kicker">Ride</span>
-        <span class="t-label">Solo</span>
-        <span class="t-sub">Last motorbike day</span>
+      <article class="tile" data-tile="d6-chill" data-img="nhon_hai">
+        <span class="t-kicker">Rest</span>
+        <span class="t-label">Long afternoon</span>
+        <span class="t-sub">Nap, pool, beach — wait for dark</span>
+      </article>
+      <article class="tile" data-tile="d6-star" data-img="see-explorascience">
+        <span class="t-kicker">Star</span>
+        <span class="t-label">Observatory</span>
+        <span class="t-sub">ExploraScience · Wed nights 19–21</span>
       </article>
     </div>
   </section>
 
-  <!-- DAY 7 -->
-  <section class="day day--rest" id="day-7" data-img="danang_beach">
+  <!-- DAY 7 — May 21 — A full day at Trung Lương -->
+  <section class="day" id="day-7" data-img="trung_luong">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
       <span class="num">07</span>
-      <span class="date">22 May · Thursday</span>
+      <span class="date">21 May · Thursday</span>
+    </div>
+    <div class="day-title">
+      <h2>All day at <em>Trung Lương</em>.</h2>
+      <button class="day-more" type="button" data-day="7">Full day ↗</button>
+    </div>
+    <div class="tiles tiles--three">
+      <article class="tile" data-tile="d7-chill" data-img="trung_luong">
+        <span class="t-kicker">Chill</span>
+        <span class="t-label">Trung Lương</span>
+        <span class="t-sub">Grass, tents, hidden cove</span>
+      </article>
+      <article class="tile" data-tile="d7-eat" data-img="eat-dessert">
+        <span class="t-kicker">Eat</span>
+        <span class="t-label">Cát Tiến</span>
+        <span class="t-sub">Nhà hàng Cánh Quạt · airy seafood</span>
+      </article>
+      <article class="tile" data-tile="d7-see" data-img="see-thinai">
+        <span class="t-kicker">See</span>
+        <span class="t-label">Thị Nại Bridge</span>
+        <span class="t-sub">Sunset over the lagoon</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- DAY 8 — May 22 — Travel to Đà Nẵng -->
+  <section class="day day--rest" id="day-8" data-img="danang_beach">
+    <div class="day-bg"></div>
+    <div class="day-shade"></div>
+    <div class="day-head">
+      <span class="num">08</span>
+      <span class="date">22 May · Friday</span>
     </div>
     <div class="day-title">
       <h2>North to <em>Đà Nẵng</em>. Nothing on the list.</h2>
-      <button class="day-more" type="button" data-day="7">Full day ↗</button>
+      <button class="day-more" type="button" data-day="8">Full day ↗</button>
     </div>
     <div class="tiles tiles--sparse">
-      <article class="tile" data-tile="d7-move" data-img="car">
+      <article class="tile" data-tile="d8-move" data-img="car">
         <span class="t-kicker">Move</span>
         <span class="t-label">Quy Nhơn → Đà Nẵng</span>
         <span class="t-sub">Morning transfer</span>
       </article>
-      <article class="tile" data-tile="d7-rest" data-img="danang_beach">
+      <article class="tile" data-tile="d8-rest" data-img="danang_beach">
         <span class="t-kicker">Rest</span>
-        <span class="t-label">My Khe</span>
+        <span class="t-label">Mỹ Khê</span>
         <span class="t-sub">Afternoon, sand, nothing</span>
       </article>
     </div>
   </section>
 
-  <!-- DAY 8 -->
-  <section class="day day--rest" id="day-8" data-img="danang_city">
+  <!-- DAY 9 — May 23 — Departure -->
+  <section class="day day--rest" id="day-9" data-img="danang_city">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
-      <span class="num">08</span>
-      <span class="date">23 May · Friday</span>
+      <span class="num">09</span>
+      <span class="date">23 May · Saturday</span>
     </div>
     <div class="day-title">
       <h2>Home. <em>Slow coffee</em>, then the flight.</h2>
-      <button class="day-more" type="button" data-day="8">Full day ↗</button>
+      <button class="day-more" type="button" data-day="9">Full day ↗</button>
     </div>
     <div class="tiles tiles--sparse">
-      <article class="tile" data-tile="d8-sip" data-img="sip-cafe2">
+      <article class="tile" data-tile="d9-sip" data-img="sip-cafe2">
         <span class="t-kicker">Sip</span>
         <span class="t-label">Morning cà phê</span>
         <span class="t-sub">One last one</span>
       </article>
-      <article class="tile" data-tile="d8-fly" data-img="move-fly">
+      <article class="tile" data-tile="d9-fly" data-img="move-fly">
         <span class="t-kicker">Fly</span>
         <span class="t-label">DAD → HAN</span>
         <span class="t-sub">Afternoon departure</span>
@@ -310,7 +338,7 @@
   <!-- COLOPHON -->
   <footer class="colophon">
     <p class="cred">Photography via Wikimedia Commons &amp; Unsplash. Routes &amp; notes from the family brief.</p>
-    <p class="sig">Tuy Hòa → Quy Nhơn → Đà Nẵng · bảy đêm tám ngày</p>
+    <p class="sig">Tuy Hòa → Quy Nhơn → Đà Nẵng · tám đêm chín ngày</p>
   </footer>
 
 </main>
@@ -331,6 +359,23 @@
   </div>
 </aside>
 
-<script src="script.js"></script>
+<!-- ====== ROUTE MAP ====== -->
+<div class="route" id="route" aria-hidden="true">
+  <div class="route-backdrop" data-route-close></div>
+  <div class="route-panel">
+    <header class="route-head">
+      <div>
+        <span class="route-kicker">The route</span>
+        <h3 class="route-title">Phú Yên → Quy Nhơn → Đà Nẵng</h3>
+        <p class="route-sub">15 → 23 May · pins in day order</p>
+      </div>
+      <button class="sheet-close" type="button" data-route-close aria-label="Close">×</button>
+    </header>
+    <div class="route-map" id="route-map"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
