@@ -2,6 +2,48 @@
 // Image wiring + Ken Burns observer + detail drawer
 // =========================================================================
 
+// Per-tile detail: place = Google Maps query (leave blank to hide map),
+// tip = one-line advice, dayNum = which day (for drawer header).
+// `coords` is [lat, lng] — when present, the map pinpoints it exactly,
+// avoiding Google's guess from the free-text query.
+const TILE_DETAILS = {
+  'd1-see':    { day: 1, kind: 'See',   label: 'Tháp Nghinh Phong',  place: 'Tháp Nghinh Phong, Tuy Hòa, Vietnam',                   coords: [13.0838, 109.3326], tip: 'Go for sunset — the twin basalt towers catch the late light and the square fills with locals. Free entry. Ten minutes from anywhere in the city.' },
+  'd1-eat':    { day: 1, kind: 'Eat',   label: 'Quán Bà Tám',         place: 'Quán Bà Tám, 289 Lê Duẩn, Tuy Hòa, Vietnam',           coords: [13.0877, 109.3232], tip: 'Ask for mắt cá ngừ đại dương (tuna eye in a clay pot) — the signature here, 2,000+ reviews can’t be wrong. Arrive by 19:00; they run out.' },
+  'd1-sip':    { day: 1, kind: 'Sip',   label: 'Huy Tùng Coffee',     place: 'Huy Tùng Coffee, 125 Nguyễn Trãi, Tuy Hòa, Vietnam',   coords: [13.0895, 109.3194], tip: 'A heritage Phú Yên coffee house — order cà phê sữa đá and sit upstairs. Quiet, shaded, not for laptops.' },
+  'd1-move':   { day: 1, kind: 'Move',  label: 'Airport → city',      place: 'Tuy Hòa Airport (TBB), Vietnam',                       coords: [13.0496, 109.3338], tip: 'Taxi counter is outside arrivals. ~150k VND to the city. Grab works but has fewer cars here than in big cities.' },
+
+  'd2-see':    { day: 2, kind: 'See',   label: 'Mũi Điện & Bãi Môn',  place: 'Mũi Điện Lighthouse, Phú Yên, Vietnam',                coords: [12.8797, 109.4639], tip: 'First point in Vietnam to see the sunrise. The climb is 15 minutes of stairs — do it before 10am, after that the sun is brutal.' },
+  'd2-cross':  { day: 2, kind: 'Cross', label: 'Hòn Nưa',             place: 'Vũng Rô Bay, Phú Yên, Vietnam',                        coords: [12.8625, 109.4183], tip: 'Skip the city-booked tours. Ride to Vũng Rô pier, hire a boat for 150–200k per person. Water’s clearest 11am–2pm.' },
+  'd2-eat':    { day: 2, kind: 'Eat',   label: 'Bè nổi Vũng Rô',      place: 'Bè nổi Vi Anh, Vũng Rô, Phú Yên, Vietnam',             coords: [12.8668, 109.4134], tip: 'Floating raft — pick your seafood from the underwater cages. Prawns and oysters are the move. Cash only.' },
+  'd2-ride':   { day: 2, kind: 'Ride',  label: 'Coastal loop',        place: '',                                                      tip: 'Back via the coastal road, not QL1. Longer by 30 minutes but hugs the cliffs. Fuel up before you leave the bay.' },
+
+  'd3-see':    { day: 3, kind: 'See',   label: 'Hòn Yến',             place: 'Hòn Yến, Tuy An, Phú Yên, Vietnam',                    coords: [13.3192, 109.2744], tip: 'Time it to low tide — you can walk out to the coral garden when the sea pulls back. Check tides that morning before you ride.' },
+  'd3-eat':    { day: 3, kind: 'Eat',   label: 'Đầm Ô Loan',          place: 'Đầm Ô Loan, Tuy An, Phú Yên, Vietnam',                 coords: [13.2797, 109.2922], tip: 'Order sò huyết (blood cockles) and a whole steamed grouper. The restaurants on stilts over the lagoon all serve the same thing — pick one with a breeze.' },
+  'd3-wander': { day: 3, kind: 'Wander',label: 'Bãi Xép',             place: 'Bãi Xép, An Chấn, Phú Yên, Vietnam',                   coords: [13.2101, 109.2683], tip: 'The filming location from *Tôi thấy hoa vàng trên cỏ xanh*. Park at the top, the path down is short but steep. Golden hour is the whole point.' },
+  'd3-ride':   { day: 3, kind: 'Ride',  label: 'Solo',                place: '',                                                      tip: 'Everything today is navigable on Google Maps. No tour needed — you’ll save half a day and most of the cost.' },
+
+  'd4-see':    { day: 4, kind: 'See',   label: 'Gành Đá Đĩa',         place: 'Gành Đá Đĩa, An Ninh Đông, Phú Yên, Vietnam',          coords: [13.6505, 109.3075], tip: 'The hexagonal basalt columns are best at low tide when you can step all the way down. Arrive before 10am — tour buses show up by noon.' },
+  'd4-swim':   { day: 4, kind: 'Swim',  label: 'Vịnh Hòa',            place: 'Vịnh Hòa Beach, Xuân Thọ, Phú Yên, Vietnam',           coords: [13.5131, 109.2856], tip: 'Quiet stretch off QL1D. Almost no facilities — good reason to stop, swim, eat a packed lunch, and move on.' },
+  'd4-eat':    { day: 4, kind: 'Eat',   label: 'Sông Cầu',            place: 'Sông Cầu, Phú Yên, Vietnam',                           coords: [13.5378, 109.2317], tip: 'Lobster capital of Vietnam. Any roadside seafood spot on QL1D through Sông Cầu will have live tôm hùm tanks — pick one, grill it, ~800k/kg.' },
+  'd4-ride':   { day: 4, kind: 'Ride',  label: 'Tuy Hòa GO',          place: '',                                                      tip: 'Book Tuy Hòa GO — transparent prices, the driver will stop wherever you point. Expect ~1.2–1.5M VND for the full day transfer.' },
+
+  'd5-from':   { day: 5, kind: 'From',  label: 'Nhơn Hải',            place: 'Nhơn Hải, Quy Nhơn, Bình Định, Vietnam',               coords: [13.8039, 109.2773], tip: 'Ride in directly, skip the city-tour pickup. Park at the pier, walk to the boats — you’ll negotiate better on-site.' },
+  'd5-snorkel':{ day: 5, kind: 'Snorkel',label: 'Hòn Khô',            place: 'Hòn Khô, Nhơn Hải, Quy Nhơn, Vietnam',                 coords: [13.8071, 109.2929], tip: '“Tour tại bến” at the pier is ~350k VND and includes canoe, snorkel gear, and a seafood lunch. Ask specifically for a child-sized life jacket (áo phao trẻ em).' },
+  'd5-eat':    { day: 5, kind: 'Eat',   label: 'Hương Dương',         place: 'Hương Dương Seafood, Nhơn Hải, Quy Nhơn, Vietnam',     coords: [13.8045, 109.2778], tip: 'The highest-rated place in the village. Bánh xèo tôm nhảy — shrimp pancakes with shrimp that were alive 30 seconds ago — is the order.' },
+  'd5-ride':   { day: 5, kind: 'Ride',  label: 'Bike day',            place: '',                                                      tip: 'Keep the bike for Bãi Xép Village in the afternoon — it’s a 25-minute ride south from Nhơn Hải, on the Quy Nhơn side.' },
+
+  'd6-chill':  { day: 6, kind: 'Chill', label: 'Trung Lương',         place: 'Trung Lương Beach, Cát Tiến, Bình Định, Vietnam',      coords: [13.9550, 109.2633], tip: 'Pay the entrance fee, grab a thatched umbrella spot. Family-friendly, shallow water. Morning only — afternoon wind picks up.' },
+  'd6-see':    { day: 6, kind: 'See',   label: 'Bãi Đá Trứng',        place: 'Bãi Đá Trứng, Ghềnh Ráng, Quy Nhơn, Vietnam',          coords: [13.7572, 109.2279], tip: 'The sea-polished “egg stones” are at the far end of Ghềnh Ráng Tiên Sa. No swimming (rocky, strong current) — it’s a look-and-sit beach.' },
+  'd6-eat':    { day: 6, kind: 'Eat',   label: 'Ngô Văn Sở',          place: 'Ngô Văn Sở, Quy Nhơn, Vietnam',                        coords: [13.7671, 109.2252], tip: 'Whole-street food market. Grilled nem, tré (fermented pork), and sugarcane juice. End at Chè Nhớ (134 Ngô Mây) for dessert — been there since 1990.' },
+  'd6-ride':   { day: 6, kind: 'Ride',  label: 'Last bike day',       place: '',                                                      tip: 'Return the bike by evening — most shops close by 20:00 in Quy Nhơn. Keep fuel receipts if they asked for a deposit.' },
+
+  'd7-move':   { day: 7, kind: 'Move',  label: 'Quy Nhơn → Đà Nẵng',  place: '',                                                      tip: 'By car is ~6 hours via QL1. Open-bus or train works too. Book the morning slot so you land in Đà Nẵng with the afternoon free.' },
+  'd7-rest':   { day: 7, kind: 'Rest',  label: 'Mỹ Khê',              place: 'Bãi biển Mỹ Khê, Đà Nẵng, Vietnam',                    coords: [16.0617, 108.2450], tip: 'Walk the beach promenade. Swim if you want, nap if you want. Don’t plan — that’s the point of this day.' },
+
+  'd8-sip':    { day: 8, kind: 'Sip',   label: 'Morning cà phê',      place: '43 Factory Coffee Roaster, Đà Nẵng, Vietnam',          coords: [16.0378, 108.2461], tip: 'If you want a last proper specialty coffee before the flight — 43 Factory is the pick. Otherwise any phin coffee near the hotel is fine.' },
+  'd8-fly':    { day: 8, kind: 'Fly',   label: 'DAD → HAN',           place: 'Da Nang International Airport (DAD), Vietnam',         coords: [16.0436, 108.1996], tip: 'Budget 2 hours before departure. Grab from Mỹ Khê is ~15 minutes outside rush. Terminal 1 is domestic — don’t go to Terminal 2.' },
+};
+
 const DAY_DETAILS = {
   1: {
     num: '01',
@@ -282,18 +324,49 @@ function closeSheet() {
   document.body.classList.remove('sheet-open');
 }
 
+function renderTile(tileId) {
+  const t = TILE_DETAILS[tileId];
+  if (!t) return;
+  const day = DAY_DETAILS[t.day];
+  sheetNum.textContent = day.num;
+  sheetDate.textContent = day.date;
+  sheetTitle.innerHTML = t.label;
+
+  const hasMap = Boolean(t.place || t.coords);
+  let html = `<section class="tile-meta"><span class="tile-kind">${t.kind}</span>${t.place ? `<span class="tile-place">${t.place.replace(/, Vietnam$/, '')}</span>` : ''}</section>`;
+  if (hasMap) {
+    const mapQ = t.coords ? `${t.coords[0]},${t.coords[1]}` : t.place;
+    const embedSrc = t.coords
+      ? `https://maps.google.com/maps?ll=${t.coords[0]},${t.coords[1]}&q=${t.coords[0]},${t.coords[1]}&z=15&ie=UTF8&iwloc=&output=embed`
+      : `https://maps.google.com/maps?q=${encodeURIComponent(t.place)}&z=15&ie=UTF8&output=embed`;
+    html += `<section class="tile-map"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${embedSrc}" allowfullscreen></iframe></section>`;
+  }
+  html += `<section class="tile-tip"><h4>Tip</h4><p>${t.tip}</p></section>`;
+  if (hasMap) {
+    const searchQ = t.place ? encodeURIComponent(t.place) : `${t.coords[0]},${t.coords[1]}`;
+    html += `<section class="tile-actions"><a class="tile-action" href="https://www.google.com/maps/search/?api=1&query=${searchQ}" target="_blank" rel="noopener">Open in Google Maps ↗</a></section>`;
+  }
+  sheetBody.innerHTML = html;
+}
+
+function openTile(tileId) {
+  renderTile(tileId);
+  sheet.setAttribute('aria-hidden', 'false');
+  sheet.classList.add('sheet--tile');
+  document.body.classList.add('sheet-open');
+  sheet.querySelector('.sheet-panel').scrollTop = 0;
+}
+
 document.querySelectorAll('.day-more').forEach((b) => {
   b.addEventListener('click', (e) => {
     e.stopPropagation();
+    sheet.classList.remove('sheet--tile');
     openSheet(Number(b.dataset.day));
   });
 });
 
-document.querySelectorAll('.day').forEach((section) => {
-  const n = Number(section.id.replace('day-', ''));
-  section.querySelectorAll('.tile').forEach((tile) => {
-    tile.addEventListener('click', () => openSheet(n));
-  });
+document.querySelectorAll('.tile[data-tile]').forEach((tile) => {
+  tile.addEventListener('click', () => openTile(tile.dataset.tile));
 });
 
 sheet.addEventListener('click', (e) => {

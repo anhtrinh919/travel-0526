@@ -4,250 +4,363 @@
     "bai_xep_yellow",
     "danang_beach"
   ],
-  "__note": "Each key maps to an ordered candidate URL list; first that loads wins. Photos from Wikimedia Commons and Unsplash.",
+  "__note": "Wikimedia 1280px thumbs (direct), wsrv.nl fallback, Unsplash for generics.",
   "tuy_hoa_beach": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4e%2FTuy_Hoa_Panorama.jpg%2F1600px-Tuy_Hoa_Panorama.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tuy_Hoa_Panorama.jpg/1600px-Tuy_Hoa_Panorama.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F48%2FSeaside_Park_Tuy_Hoa.jpg%2F1600px-Seaside_Park_Tuy_Hoa.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Seaside_Park_Tuy_Hoa.jpg/1600px-Seaside_Park_Tuy_Hoa.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F39%2FBeach_in_Tuy_Hoa_1.jpg%2F1600px-Beach_in_Tuy_Hoa_1.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Beach_in_Tuy_Hoa_1.jpg/1600px-Beach_in_Tuy_Hoa_1.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tuy_Hoa_Panorama.jpg/1280px-Tuy_Hoa_Panorama.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Seaside_Park_Tuy_Hoa.jpg/1280px-Seaside_Park_Tuy_Hoa.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Beach_in_Tuy_Hoa_1.jpg/1280px-Beach_in_Tuy_Hoa_1.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tuy_Hoa_Panorama.jpg/1280px-Tuy_Hoa_Panorama.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/4/48/Seaside_Park_Tuy_Hoa.jpg/1280px-Seaside_Park_Tuy_Hoa.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/3/39/Beach_in_Tuy_Hoa_1.jpg/1280px-Beach_in_Tuy_Hoa_1.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Tuy Hòa — Wikimedia Commons"
+    "credit": "Tuy Hòa — Wikimedia"
   },
   "nghinh_phong": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F98%2F%25C4%2590%25C6%25B0%25E1%25BB%259Dng_ph%25E1%25BB%2591_%25E1%25BB%259F_Tuy_H%25C3%25B2a_nh%25C3%25ACn_t%25E1%25BB%25AB_th%25C3%25A1p_Nghinh_Phong.jpg%2F1600px-%25C4%2590%25C6%25B0%25E1%25BB%259Dng_ph%25E1%25BB%2591_%25E1%25BB%259F_Tuy_H%25C3%25B2a_nh%25C3%25ACn_t%25E1%25BB%25AB_th%25C3%25A1p_Nghinh_Phong.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/%C4%90%C6%B0%E1%BB%9Dng_ph%E1%BB%91_%E1%BB%9F_Tuy_H%C3%B2a_nh%C3%ACn_t%E1%BB%AB_th%C3%A1p_Nghinh_Phong.jpg/1600px-%C4%90%C6%B0%E1%BB%9Dng_ph%E1%BB%91_%E1%BB%9F_Tuy_H%C3%B2a_nh%C3%ACn_t%E1%BB%AB_th%C3%A1p_Nghinh_Phong.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4e%2FTuy_Hoa_Panorama.jpg%2F1600px-Tuy_Hoa_Panorama.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tuy_Hoa_Panorama.jpg/1600px-Tuy_Hoa_Panorama.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/%C4%90%C6%B0%E1%BB%9Dng_ph%E1%BB%91_%E1%BB%9F_Tuy_H%C3%B2a_nh%C3%ACn_t%E1%BB%AB_th%C3%A1p_Nghinh_Phong.jpg/1280px-%C4%90%C6%B0%E1%BB%9Dng_ph%E1%BB%91_%E1%BB%9F_Tuy_H%C3%B2a_nh%C3%ACn_t%E1%BB%AB_th%C3%A1p_Nghinh_Phong.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tuy_Hoa_Panorama.jpg/1280px-Tuy_Hoa_Panorama.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/9/98/%C4%90%C6%B0%E1%BB%9Dng_ph%E1%BB%91_%E1%BB%9F_Tuy_H%C3%B2a_nh%C3%ACn_t%E1%BB%AB_th%C3%A1p_Nghinh_Phong.jpg/1280px-%C4%90%C6%B0%E1%BB%9Dng_ph%E1%BB%91_%E1%BB%9F_Tuy_H%C3%B2a_nh%C3%ACn_t%E1%BB%AB_th%C3%A1p_Nghinh_Phong.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tuy_Hoa_Panorama.jpg/1280px-Tuy_Hoa_Panorama.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "View from Tháp Nghinh Phong — Wikimedia Commons"
+    "credit": "Nghinh Phong — Wikimedia"
   },
   "mui_dien": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fde%2FDien_Cape_Lighthouse.jpg%2F1600px-Dien_Cape_Lighthouse.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Dien_Cape_Lighthouse.jpg/1600px-Dien_Cape_Lighthouse.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9b%2FDien_Cape%252C_Phu_Yen_-Vietnam_%252829166413668%2529.jpg%2F1600px-Dien_Cape%252C_Phu_Yen_-Vietnam_%252829166413668%2529.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dien_Cape%2C_Phu_Yen_-Vietnam_%2829166413668%29.jpg/1600px-Dien_Cape%2C_Phu_Yen_-Vietnam_%2829166413668%29.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd9%2FMui_Dien_Cape.png%2F1600px-Mui_Dien_Cape.png&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mui_Dien_Cape.png/1600px-Mui_Dien_Cape.png"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Dien_Cape_Lighthouse.jpg/1280px-Dien_Cape_Lighthouse.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dien_Cape%2C_Phu_Yen_-Vietnam_%2829166413668%29.jpg/1280px-Dien_Cape%2C_Phu_Yen_-Vietnam_%2829166413668%29.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/d/de/Dien_Cape_Lighthouse.jpg/1280px-Dien_Cape_Lighthouse.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dien_Cape%2C_Phu_Yen_-Vietnam_%2829166413668%29.jpg/1280px-Dien_Cape%2C_Phu_Yen_-Vietnam_%2829166413668%29.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Mũi Điện / Cape Varella — Wikimedia Commons"
+    "credit": "Mũi Điện — Wikimedia"
   },
   "bai_mon": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F6d%2FB%25C3%25A3i_M%25C3%25B4n_%252842810805471%2529.jpg%2F1600px-B%25C3%25A3i_M%25C3%25B4n_%252842810805471%2529.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/B%C3%A3i_M%C3%B4n_%2842810805471%29.jpg/1600px-B%C3%A3i_M%C3%B4n_%2842810805471%29.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5e%2FB%25C3%25A3i_M%25C3%25B4n_%252830090810327%2529.jpg%2F1600px-B%25C3%25A3i_M%25C3%25B4n_%252830090810327%2529.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/B%C3%A3i_M%C3%B4n_%2830090810327%29.jpg/1600px-B%C3%A3i_M%C3%B4n_%2830090810327%29.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/B%C3%A3i_M%C3%B4n_%2842810805471%29.jpg/1280px-B%C3%A3i_M%C3%B4n_%2842810805471%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/B%C3%A3i_M%C3%B4n_%2830090810327%29.jpg/1280px-B%C3%A3i_M%C3%B4n_%2830090810327%29.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/6/6d/B%C3%A3i_M%C3%B4n_%2842810805471%29.jpg/1280px-B%C3%A3i_M%C3%B4n_%2842810805471%29.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/5/5e/B%C3%A3i_M%C3%B4n_%2830090810327%29.jpg/1280px-B%C3%A3i_M%C3%B4n_%2830090810327%29.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Bãi Môn — Wikimedia Commons"
+    "credit": "Bãi Môn — Wikimedia"
   },
   "hon_nua": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F6f%2FV%25E1%25BB%258Bnh_V%25C5%25A9ng_R%25C3%25B4.jpg%2F1600px-V%25E1%25BB%258Bnh_V%25C5%25A9ng_R%25C3%25B4.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/V%E1%BB%8Bnh_V%C5%A9ng_R%C3%B4.jpg/1600px-V%E1%BB%8Bnh_V%C5%A9ng_R%C3%B4.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc7%2FVung_Ro_Bay_5.jpg%2F1600px-Vung_Ro_Bay_5.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Vung_Ro_Bay_5.jpg/1600px-Vung_Ro_Bay_5.jpg",
-      "images/cache/hon_nua-ef8984047e.jpg",
-      "https://images.unsplash.com/photo-1528181304800-259b08848526?w=1600&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/V%E1%BB%8Bnh_V%C5%A9ng_R%C3%B4.jpg/1280px-V%E1%BB%8Bnh_V%C5%A9ng_R%C3%B4.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Vung_Ro_Bay_5.jpg/1280px-Vung_Ro_Bay_5.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/6/6f/V%E1%BB%8Bnh_V%C5%A9ng_R%C3%B4.jpg/1280px-V%E1%BB%8Bnh_V%C5%A9ng_R%C3%B4.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Vung_Ro_Bay_5.jpg/1280px-Vung_Ro_Bay_5.jpg&output=jpg&q=85&v=3",
+      "images/cache/hon_nua-ef8984047e.jpg"
     ],
-    "credit": "Vũng Rô Bay & nearby island — Wikimedia / Unsplash"
+    "credit": "Vũng Rô — Wikimedia"
   },
   "hon_yen": {
     "urls": [
-      "images/cache/hon_yen-1e9bd9bb58.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc7%2FVung_Ro_Bay_5.jpg%2F1600px-Vung_Ro_Bay_5.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Vung_Ro_Bay_5.jpg/1600px-Vung_Ro_Bay_5.jpg",
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1600&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Vung_Ro_Bay_5.jpg/1280px-Vung_Ro_Bay_5.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Vung_Ro_Bay_5.jpg/1280px-Vung_Ro_Bay_5.jpg&output=jpg&q=85&v=3",
+      "images/cache/hon_yen-1e9bd9bb58.jpg"
     ],
-    "credit": "Vietnam coast (Hòn Yến fallback) — Unsplash"
+    "credit": "Coastal — Wikimedia"
   },
   "o_loan": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F70%2F%25C4%2590%25E1%25BA%25A7m_%25C3%2594_Loan%252C_An_Hi%25E1%25BB%2587p%252C_Tuy_An%252C_Ph%25C3%25BA_Y%25C3%25AAn.jpeg%2F1600px-%25C4%2590%25E1%25BA%25A7m_%25C3%2594_Loan%252C_An_Hi%25E1%25BB%2587p%252C_Tuy_An%252C_Ph%25C3%25BA_Y%25C3%25AAn.jpeg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/%C4%90%E1%BA%A7m_%C3%94_Loan%2C_An_Hi%E1%BB%87p%2C_Tuy_An%2C_Ph%C3%BA_Y%C3%AAn.jpeg/1600px-%C4%90%E1%BA%A7m_%C3%94_Loan%2C_An_Hi%E1%BB%87p%2C_Tuy_An%2C_Ph%C3%BA_Y%C3%AAn.jpeg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/%C4%90%E1%BA%A7m_%C3%94_Loan%2C_An_Hi%E1%BB%87p%2C_Tuy_An%2C_Ph%C3%BA_Y%C3%AAn.jpeg/1280px-%C4%90%E1%BA%A7m_%C3%94_Loan%2C_An_Hi%E1%BB%87p%2C_Tuy_An%2C_Ph%C3%BA_Y%C3%AAn.jpeg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/7/70/%C4%90%E1%BA%A7m_%C3%94_Loan%2C_An_Hi%E1%BB%87p%2C_Tuy_An%2C_Ph%C3%BA_Y%C3%AAn.jpeg/1280px-%C4%90%E1%BA%A7m_%C3%94_Loan%2C_An_Hi%E1%BB%87p%2C_Tuy_An%2C_Ph%C3%BA_Y%C3%AAn.jpeg&output=jpg&q=85&v=3"
     ],
-    "credit": "Đầm Ô Loan — Wikimedia Commons"
+    "credit": "Đầm Ô Loan — Wikimedia"
   },
   "bai_xep_yellow": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F23%2FB%25C3%25A3i_X%25C3%25A9p_1.jpg%2F1600px-B%25C3%25A3i_X%25C3%25A9p_1.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/B%C3%A3i_X%C3%A9p_1.jpg/1600px-B%C3%A3i_X%C3%A9p_1.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb5%2FB%25C3%25A3i_X%25C3%25A9p_2.jpg%2F1600px-B%25C3%25A3i_X%25C3%25A9p_2.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/B%C3%A3i_X%C3%A9p_2.jpg/1600px-B%C3%A3i_X%C3%A9p_2.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3a%2FB%25C3%25A3i_X%25C3%25A9p_4.jpg%2F1600px-B%25C3%25A3i_X%25C3%25A9p_4.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/B%C3%A3i_X%C3%A9p_4.jpg/1600px-B%C3%A3i_X%C3%A9p_4.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/B%C3%A3i_X%C3%A9p_1.jpg/1280px-B%C3%A3i_X%C3%A9p_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/B%C3%A3i_X%C3%A9p_2.jpg/1280px-B%C3%A3i_X%C3%A9p_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/B%C3%A3i_X%C3%A9p_4.jpg/1280px-B%C3%A3i_X%C3%A9p_4.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/2/23/B%C3%A3i_X%C3%A9p_1.jpg/1280px-B%C3%A3i_X%C3%A9p_1.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/b/b5/B%C3%A3i_X%C3%A9p_2.jpg/1280px-B%C3%A3i_X%C3%A9p_2.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/3/3a/B%C3%A3i_X%C3%A9p_4.jpg/1280px-B%C3%A3i_X%C3%A9p_4.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Bãi Xép, Phú Yên — Wikimedia Commons"
+    "credit": "Bãi Xép — Wikimedia"
   },
   "ganh_da_dia": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7f%2FBasalt_rocks_at_G%25C3%25A0nh_%25C4%2590%25C3%25A1_%25C4%2590%25C4%25A9a.jpg%2F1600px-Basalt_rocks_at_G%25C3%25A0nh_%25C4%2590%25C3%25A1_%25C4%2590%25C4%25A9a.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Basalt_rocks_at_G%C3%A0nh_%C4%90%C3%A1_%C4%90%C4%A9a.jpg/1600px-Basalt_rocks_at_G%C3%A0nh_%C4%90%C3%A1_%C4%90%C4%A9a.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F65%2FGanh_Da_Dia_%25285383346663%2529.jpg%2F1600px-Ganh_Da_Dia_%25285383346663%2529.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Ganh_Da_Dia_%285383346663%29.jpg/1600px-Ganh_Da_Dia_%285383346663%29.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F1b%2FGhenh_Da_Dia_02.jpg%2F1600px-Ghenh_Da_Dia_02.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Ghenh_Da_Dia_02.jpg/1600px-Ghenh_Da_Dia_02.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Basalt_rocks_at_G%C3%A0nh_%C4%90%C3%A1_%C4%90%C4%A9a.jpg/1280px-Basalt_rocks_at_G%C3%A0nh_%C4%90%C3%A1_%C4%90%C4%A9a.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Ganh_Da_Dia_%285383346663%29.jpg/1280px-Ganh_Da_Dia_%285383346663%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Ghenh_Da_Dia_02.jpg/1280px-Ghenh_Da_Dia_02.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Basalt_rocks_at_G%C3%A0nh_%C4%90%C3%A1_%C4%90%C4%A9a.jpg/1280px-Basalt_rocks_at_G%C3%A0nh_%C4%90%C3%A1_%C4%90%C4%A9a.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/6/65/Ganh_Da_Dia_%285383346663%29.jpg/1280px-Ganh_Da_Dia_%285383346663%29.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Ghenh_Da_Dia_02.jpg/1280px-Ghenh_Da_Dia_02.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Gành Đá Đĩa — Wikimedia Commons"
-  },
-  "vinh_hoa": {
-    "urls": [
-      "images/cache/vinh_hoa-c3e417b045.jpg",
-      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1600&q=80"
-    ],
-    "credit": "Coastal aerial (Vịnh Hòa fallback) — Unsplash"
+    "credit": "Gành Đá Đĩa — Wikimedia"
   },
   "nhon_hai": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5c%2FNh%25C6%25A1n_H%25E1%25BA%25A3i%252C_Quy_Nh%25C6%25A1n_-_33275233023.jpg%2F1600px-Nh%25C6%25A1n_H%25E1%25BA%25A3i%252C_Quy_Nh%25C6%25A1n_-_33275233023.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg/1600px-Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F50%2FB%25C3%25A1n_%25C4%2591%25E1%25BA%25A3o_Ph%25C6%25B0%25C6%25A1ng_Mai.jpg%2F1600px-B%25C3%25A1n_%25C4%2591%25E1%25BA%25A3o_Ph%25C6%25B0%25C6%25A1ng_Mai.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/B%C3%A1n_%C4%91%E1%BA%A3o_Ph%C6%B0%C6%A1ng_Mai.jpg/1600px-B%C3%A1n_%C4%91%E1%BA%A3o_Ph%C6%B0%C6%A1ng_Mai.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg/1280px-Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/B%C3%A1n_%C4%91%E1%BA%A3o_Ph%C6%B0%C6%A1ng_Mai.jpg/1280px-B%C3%A1n_%C4%91%E1%BA%A3o_Ph%C6%B0%C6%A1ng_Mai.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg/1280px-Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/5/50/B%C3%A1n_%C4%91%E1%BA%A3o_Ph%C6%B0%C6%A1ng_Mai.jpg/1280px-B%C3%A1n_%C4%91%E1%BA%A3o_Ph%C6%B0%C6%A1ng_Mai.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Nhơn Hải / Phương Mai — Wikimedia Commons"
+    "credit": "Nhơn Hải — Wikimedia"
   },
   "hon_kho": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb1%2FKy-co-eo-gio-1-1048.jpg%2F1600px-Ky-co-eo-gio-1-1048.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ky-co-eo-gio-1-1048.jpg/1600px-Ky-co-eo-gio-1-1048.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe1%2FCu_Lao_Xanh_%2528Green_Island%2529_in_Quy_Nhon_city_%252830527170483%2529.jpg%2F1600px-Cu_Lao_Xanh_%2528Green_Island%2529_in_Quy_Nhon_city_%252830527170483%2529.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg/1600px-Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5c%2FNh%25C6%25A1n_H%25E1%25BA%25A3i%252C_Quy_Nh%25C6%25A1n_-_33275233023.jpg%2F1600px-Nh%25C6%25A1n_H%25E1%25BA%25A3i%252C_Quy_Nh%25C6%25A1n_-_33275233023.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg/1600px-Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ky-co-eo-gio-1-1048.jpg/1280px-Ky-co-eo-gio-1-1048.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg/1280px-Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ky-co-eo-gio-1-1048.jpg/1280px-Ky-co-eo-gio-1-1048.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg/1280px-Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Quy Nhơn islands (Hòn Khô fallback) — Wikimedia Commons"
-  },
-  "trung_luong": {
-    "urls": [
-      "images/cache/trung_luong-f7dd91b3c3.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F35%2FBi%25E1%25BB%2583n_Quy_Nh%25C6%25A1n.jpg%2F1600px-Bi%25E1%25BB%2583n_Quy_Nh%25C6%25A1n.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg/1600px-Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg",
-      "https://images.unsplash.com/photo-1509233725247-49e657c54213?w=1600&q=80"
-    ],
-    "credit": "Coastal cliffs (Trung Lương fallback) — Unsplash / Wikimedia"
+    "credit": "Quy Nhơn islands — Wikimedia"
   },
   "ghenh_rang": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F35%2FBi%25E1%25BB%2583n_Quy_Nh%25C6%25A1n.jpg%2F1600px-Bi%25E1%25BB%2583n_Quy_Nh%25C6%25A1n.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg/1600px-Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F36%2FBusy_Quy_Nhon_%252851947639493%2529.jpg%2F1600px-Busy_Quy_Nhon_%252851947639493%2529.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Busy_Quy_Nhon_%2851947639493%29.jpg/1600px-Busy_Quy_Nhon_%2851947639493%29.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd8%2FM%25E1%25BB%2599_h%25C3%25A0n_m%25E1%25BA%25A1c_T%25E1%25BB%25AD.JPG%2F1600px-M%25E1%25BB%2599_h%25C3%25A0n_m%25E1%25BA%25A1c_T%25E1%25BB%25AD.JPG&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/M%E1%BB%99_h%C3%A0n_m%E1%BA%A1c_T%E1%BB%AD.JPG/1600px-M%E1%BB%99_h%C3%A0n_m%E1%BA%A1c_T%E1%BB%AD.JPG"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg/1280px-Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Busy_Quy_Nhon_%2851947639493%29.jpg/1280px-Busy_Quy_Nhon_%2851947639493%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/M%E1%BB%99_h%C3%A0n_m%E1%BA%A1c_T%E1%BB%AD.JPG/1280px-M%E1%BB%99_h%C3%A0n_m%E1%BA%A1c_T%E1%BB%AD.JPG",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg/1280px-Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/3/36/Busy_Quy_Nhon_%2851947639493%29.jpg/1280px-Busy_Quy_Nhon_%2851947639493%29.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/d/d8/M%E1%BB%99_h%C3%A0n_m%E1%BA%A1c_T%E1%BB%AD.JPG/1280px-M%E1%BB%99_h%C3%A0n_m%E1%BA%A1c_T%E1%BB%AD.JPG&output=jpg&q=85&v=3"
     ],
-    "credit": "Ghềnh Ráng Tiên Sa — Wikimedia Commons"
+    "credit": "Ghềnh Ráng — Wikimedia"
   },
   "egg_stone": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fda%2FB%25C3%25A3i_%25C4%2590%25C3%25A1_Tr%25E1%25BB%25A9ng.jpg%2F1600px-B%25C3%25A3i_%25C4%2590%25C3%25A1_Tr%25E1%25BB%25A9ng.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/B%C3%A3i_%C4%90%C3%A1_Tr%E1%BB%A9ng.jpg/1600px-B%C3%A3i_%C4%90%C3%A1_Tr%E1%BB%A9ng.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/B%C3%A3i_%C4%90%C3%A1_Tr%E1%BB%A9ng.jpg/1280px-B%C3%A3i_%C4%90%C3%A1_Tr%E1%BB%A9ng.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/d/da/B%C3%A3i_%C4%90%C3%A1_Tr%E1%BB%A9ng.jpg/1280px-B%C3%A3i_%C4%90%C3%A1_Tr%E1%BB%A9ng.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Bãi Đá Trứng — Wikimedia Commons"
+    "credit": "Bãi Đá Trứng — Wikimedia"
   },
   "danang_beach": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe5%2FMy_Khe_Beach_Danang_Coastline.jpg%2F1600px-My_Khe_Beach_Danang_Coastline.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/My_Khe_Beach_Danang_Coastline.jpg/1600px-My_Khe_Beach_Danang_Coastline.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff2%2FMy_Khe_Beach_9.jpg%2F1600px-My_Khe_Beach_9.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/My_Khe_Beach_9.jpg/1600px-My_Khe_Beach_9.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff3%2FMy_Khe_Beach_20.jpg%2F1600px-My_Khe_Beach_20.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/My_Khe_Beach_20.jpg/1600px-My_Khe_Beach_20.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/My_Khe_Beach_Danang_Coastline.jpg/1280px-My_Khe_Beach_Danang_Coastline.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/My_Khe_Beach_9.jpg/1280px-My_Khe_Beach_9.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/My_Khe_Beach_20.jpg/1280px-My_Khe_Beach_20.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/e/e5/My_Khe_Beach_Danang_Coastline.jpg/1280px-My_Khe_Beach_Danang_Coastline.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/f/f2/My_Khe_Beach_9.jpg/1280px-My_Khe_Beach_9.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/f/f3/My_Khe_Beach_20.jpg/1280px-My_Khe_Beach_20.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Mỹ Khê, Đà Nẵng — Wikimedia Commons"
+    "credit": "Mỹ Khê — Wikimedia"
   },
   "danang_city": {
     "urls": [
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F14%2FBright_Da_Nang_skyline_%2528Unsplash%2529.jpg%2F1600px-Bright_Da_Nang_skyline_%2528Unsplash%2529.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Bright_Da_Nang_skyline_%28Unsplash%29.jpg/1600px-Bright_Da_Nang_skyline_%28Unsplash%29.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb8%2FDragon_Bridge_%2528Danang%2529_20190919.jpg%2F1600px-Dragon_Bridge_%2528Danang%2529_20190919.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Dragon_Bridge_%28Danang%29_20190919.jpg/1600px-Dragon_Bridge_%28Danang%29_20190919.jpg",
-      "https://wsrv.nl/?url=upload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Feb%2FDa_Nang_International_Fireworks_Festival_DIFF_Dragon_Bridge_Han_River_night_skyline_Vietnam.jpg%2F1600px-Da_Nang_International_Fireworks_Festival_DIFF_Dragon_Bridge_Han_River_night_skyline_Vietnam.jpg&w=1800&output=jpg&q=85",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Da_Nang_International_Fireworks_Festival_DIFF_Dragon_Bridge_Han_River_night_skyline_Vietnam.jpg/1600px-Da_Nang_International_Fireworks_Festival_DIFF_Dragon_Bridge_Han_River_night_skyline_Vietnam.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Bright_Da_Nang_skyline_%28Unsplash%29.jpg/1280px-Bright_Da_Nang_skyline_%28Unsplash%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Dragon_Bridge_%28Danang%29_20190919.jpg/1280px-Dragon_Bridge_%28Danang%29_20190919.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Da_Nang_International_Fireworks_Festival_DIFF_Dragon_Bridge_Han_River_night_skyline_Vietnam.jpg/1280px-Da_Nang_International_Fireworks_Festival_DIFF_Dragon_Bridge_Han_River_night_skyline_Vietnam.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/1/14/Bright_Da_Nang_skyline_%28Unsplash%29.jpg/1280px-Bright_Da_Nang_skyline_%28Unsplash%29.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Dragon_Bridge_%28Danang%29_20190919.jpg/1280px-Dragon_Bridge_%28Danang%29_20190919.jpg&output=jpg&q=85&v=3",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Da_Nang_International_Fireworks_Festival_DIFF_Dragon_Bridge_Han_River_night_skyline_Vietnam.jpg/1280px-Da_Nang_International_Fireworks_Festival_DIFF_Dragon_Bridge_Han_River_night_skyline_Vietnam.jpg&output=jpg&q=85&v=3"
     ],
-    "credit": "Đà Nẵng skyline / Dragon Bridge — Wikimedia Commons"
+    "credit": "Đà Nẵng — Wikimedia"
+  },
+  "eat-noodle": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Bun-Bo-Hue-from-Huong-Giang-2011.jpg/1280px-Bun-Bo-Hue-from-Huong-Giang-2011.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/0/00/Bun-Bo-Hue-from-Huong-Giang-2011.jpg/1280px-Bun-Bo-Hue-from-Huong-Giang-2011.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Bún Bò Huế — Wikimedia"
+  },
+  "eat-banhmi": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Hoi_An_banh_mi.jpg/1280px-Hoi_An_banh_mi.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/2/23/Hoi_An_banh_mi.jpg/1280px-Hoi_An_banh_mi.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Hội An bánh mì — Wikimedia"
+  },
+  "eat-raft": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Fish_Farm_in_Halong_Bay_%2822752362529%29.jpg/1280px-Fish_Farm_in_Halong_Bay_%2822752362529%29.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Fish_Farm_in_Halong_Bay_%2822752362529%29.jpg/1280px-Fish_Farm_in_Halong_Bay_%2822752362529%29.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Fish raft — Wikimedia"
+  },
+  "eat-seafood": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/T%C3%B4m_n%C6%B0%E1%BB%9Bng_Phan_X%C3%ADch_Long%2C_n%C4%83m_2017_%281%29.jpg/1280px-T%C3%B4m_n%C6%B0%E1%BB%9Bng_Phan_X%C3%ADch_Long%2C_n%C4%83m_2017_%281%29.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/a/a4/T%C3%B4m_n%C6%B0%E1%BB%9Bng_Phan_X%C3%ADch_Long%2C_n%C4%83m_2017_%281%29.jpg/1280px-T%C3%B4m_n%C6%B0%E1%BB%9Bng_Phan_X%C3%ADch_Long%2C_n%C4%83m_2017_%281%29.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Tôm nướng — Wikimedia"
+  },
+  "eat-clay": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg/1280px-C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/b/b0/C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg/1280px-C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Cơm tấm Đà Nẵng — Wikimedia"
+  },
+  "eat-street": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Food_stand_in_Hu%E1%BA%BF.jpg/1280px-Food_stand_in_Hu%E1%BA%BF.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Food_stand_in_Hu%E1%BA%BF.jpg/1280px-Food_stand_in_Hu%E1%BA%BF.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Food stand Huế — Wikimedia"
+  },
+  "eat-dessert": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ch%C3%A8_b%C3%A0_ba.jpg/1280px-Ch%C3%A8_b%C3%A0_ba.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ch%C3%A8_b%C3%A0_ba.jpg/1280px-Ch%C3%A8_b%C3%A0_ba.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Chè ba ba — Wikimedia"
+  },
+  "sip-cafe1": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Vietnam_08_-_132_-_Vietnamese_coffee_%283185747640%29.jpg/1280px-Vietnam_08_-_132_-_Vietnamese_coffee_%283185747640%29.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Vietnam_08_-_132_-_Vietnamese_coffee_%283185747640%29.jpg/1280px-Vietnam_08_-_132_-_Vietnamese_coffee_%283185747640%29.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Phin coffee — Wikimedia"
+  },
+  "sip-cafe2": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Egg_Coffee_%286923068614%29.jpg/1280px-Egg_Coffee_%286923068614%29.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/5/54/Egg_Coffee_%286923068614%29.jpg/1280px-Egg_Coffee_%286923068614%29.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Cà phê trứng — Wikimedia"
+  },
+  "move-bike1": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hai_Van_Pass%2C_Vietnam%2C_View_northwards.jpg/1280px-Hai_Van_Pass%2C_Vietnam%2C_View_northwards.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hai_Van_Pass%2C_Vietnam%2C_View_northwards.jpg/1280px-Hai_Van_Pass%2C_Vietnam%2C_View_northwards.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Hải Vân coastal — Wikimedia"
+  },
+  "move-bike2": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hai_Van_Pass%2C_Vietnam%2C_Vietnamese_motorbike_rider_near_US_military_bunker.jpg/1280px-Hai_Van_Pass%2C_Vietnam%2C_Vietnamese_motorbike_rider_near_US_military_bunker.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hai_Van_Pass%2C_Vietnam%2C_Vietnamese_motorbike_rider_near_US_military_bunker.jpg/1280px-Hai_Van_Pass%2C_Vietnam%2C_Vietnamese_motorbike_rider_near_US_military_bunker.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Rider at Hải Vân — Wikimedia"
+  },
+  "move-bike3": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/H%C3%A0_Giang%2C_12-2014_-_Flickr_-_Kh%C3%A1nh_Hmoong.jpg/1280px-H%C3%A0_Giang%2C_12-2014_-_Flickr_-_Kh%C3%A1nh_Hmoong.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/f/fc/H%C3%A0_Giang%2C_12-2014_-_Flickr_-_Kh%C3%A1nh_Hmoong.jpg/1280px-H%C3%A0_Giang%2C_12-2014_-_Flickr_-_Kh%C3%A1nh_Hmoong.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Hà Giang — Wikimedia"
+  },
+  "move-bike4": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/H%C3%A0ng_D%E1%BA%A7u_Street%2C_Hanoi%2C_20240204_1340_5780.jpg/1280px-H%C3%A0ng_D%E1%BA%A7u_Street%2C_Hanoi%2C_20240204_1340_5780.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/d/d7/H%C3%A0ng_D%E1%BA%A7u_Street%2C_Hanoi%2C_20240204_1340_5780.jpg/1280px-H%C3%A0ng_D%E1%BA%A7u_Street%2C_Hanoi%2C_20240204_1340_5780.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Hanoi street — Wikimedia"
+  },
+  "move-car2": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/NH%C3%80_M%C3%8CNH-_QL1_CAM_TH%C3%80NH_B%E1%BA%AEC_-_panoramio.jpg/1280px-NH%C3%80_M%C3%8CNH-_QL1_CAM_TH%C3%80NH_B%E1%BA%AEC_-_panoramio.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/8/89/NH%C3%80_M%C3%8CNH-_QL1_CAM_TH%C3%80NH_B%E1%BA%AEC_-_panoramio.jpg/1280px-NH%C3%80_M%C3%8CNH-_QL1_CAM_TH%C3%80NH_B%E1%BA%AEC_-_panoramio.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "QL1 coastal — Wikimedia"
+  },
+  "move-car3": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/NewOne_-_Xanh_SM_VinFast_VF_e34_at_Hang_Bong_street_in_Typhoon_Yagi_%282024%29.jpg/1280px-NewOne_-_Xanh_SM_VinFast_VF_e34_at_Hang_Bong_street_in_Typhoon_Yagi_%282024%29.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/6/61/NewOne_-_Xanh_SM_VinFast_VF_e34_at_Hang_Bong_street_in_Typhoon_Yagi_%282024%29.jpg/1280px-NewOne_-_Xanh_SM_VinFast_VF_e34_at_Hang_Bong_street_in_Typhoon_Yagi_%282024%29.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Xanh SM taxi — Wikimedia"
+  },
+  "move-fly": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/An_airplane_takes_off_in_the_sunset.jpg/1280px-An_airplane_takes_off_in_the_sunset.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/8/80/An_airplane_takes_off_in_the_sunset.jpg/1280px-An_airplane_takes_off_in_the_sunset.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Sunset takeoff — Wikimedia"
+  },
+  "see-boat": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Vietnamese_fishing_boats%2C_Lang_Co_lagoon%2C_Vietnam.jpg/1280px-Vietnamese_fishing_boats%2C_Lang_Co_lagoon%2C_Vietnam.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/5/52/Vietnamese_fishing_boats%2C_Lang_Co_lagoon%2C_Vietnam.jpg/1280px-Vietnamese_fishing_boats%2C_Lang_Co_lagoon%2C_Vietnam.jpg&output=jpg&q=85&v=3"
+    ],
+    "credit": "Lăng Cô fishing boats — Wikimedia"
+  },
+  "vinh_hoa": {
+    "urls": [
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1600&q=80",
+      "images/cache/vinh_hoa-c3e417b045.jpg"
+    ],
+    "credit": "Coastal aerial (Vịnh Hòa fallback) — Unsplash"
+  },
+  "trung_luong": {
+    "urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/35/Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg",
+      "https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/3/35/Bi%E1%BB%83n_Quy_Nh%C6%A1n.jpg&w=1800&output=jpg&q=85&v=3",
+      "https://images.unsplash.com/photo-1509233725247-49e657c54213?w=1600&q=80",
+      "images/cache/trung_luong-f7dd91b3c3.jpg"
+    ],
+    "credit": "Coastal cliffs (Trung Lương fallback) — Unsplash / Wikimedia"
   },
   "banh_canh": {
     "urls": [
-      "images/cache/banh_canh-45fc45393e.jpg",
-      "images/cache/banh_canh-cec6b50486.jpg",
-      "images/cache/banh_canh-449c90d5ad.jpg",
       "https://images.unsplash.com/photo-1600320254374-ce2d293c324e?w=1600&q=80",
       "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=1600&q=80",
-      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1600&q=80"
+      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1600&q=80",
+      "images/cache/banh_canh-45fc45393e.jpg",
+      "images/cache/banh_canh-cec6b50486.jpg",
+      "images/cache/banh_canh-449c90d5ad.jpg"
     ],
     "credit": "Vietnamese noodle soup — Unsplash"
   },
   "coffee": {
     "urls": [
-      "images/cache/coffee-d410861e2b.jpg",
-      "images/cache/coffee-9a7f847146.jpg",
       "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600&q=80",
-      "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1600&q=80"
+      "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1600&q=80",
+      "images/cache/coffee-d410861e2b.jpg",
+      "images/cache/coffee-9a7f847146.jpg"
     ],
     "credit": "Cafe — Unsplash"
   },
   "taxi": {
     "urls": [
-      "images/cache/taxi-1f9cba6197.jpg",
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80"
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80",
+      "images/cache/taxi-1f9cba6197.jpg"
     ],
     "credit": "Road — Unsplash"
   },
   "floating_raft": {
     "urls": [
-      "images/cache/floating_raft-121f7fcb56.jpg",
-      "https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=1600&q=80"
+      "https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=1600&q=80",
+      "images/cache/floating_raft-121f7fcb56.jpg"
     ],
     "credit": "Seafood raft — Unsplash"
   },
   "motorbike": {
     "urls": [
-      "images/cache/motorbike-480a8dd190.jpg",
-      "images/cache/motorbike-6f6da14168.jpg",
       "https://images.unsplash.com/photo-1528127269322-539801943592?w=1600&q=80",
-      "https://images.unsplash.com/photo-1555921015-5532091f6026?w=1600&q=80"
+      "https://images.unsplash.com/photo-1555921015-5532091f6026?w=1600&q=80",
+      "images/cache/motorbike-480a8dd190.jpg",
+      "images/cache/motorbike-6f6da14168.jpg"
     ],
     "credit": "Motorbike, Vietnam — Unsplash"
   },
   "lobster": {
     "urls": [
-      "images/cache/floating_raft-121f7fcb56.jpg",
-      "images/cache/lobster-5fc08549d7.jpg",
       "https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=1600&q=80",
-      "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=1600&q=80"
+      "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=1600&q=80",
+      "images/cache/floating_raft-121f7fcb56.jpg",
+      "images/cache/lobster-5fc08549d7.jpg"
     ],
     "credit": "Seafood — Unsplash"
   },
   "car": {
     "urls": [
-      "images/cache/taxi-1f9cba6197.jpg",
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80"
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80",
+      "images/cache/taxi-1f9cba6197.jpg"
     ],
     "credit": "Coastal road trip — Unsplash"
   },
   "seafood": {
     "urls": [
-      "images/cache/floating_raft-121f7fcb56.jpg",
-      "images/cache/lobster-5fc08549d7.jpg",
       "https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=1600&q=80",
-      "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=1600&q=80"
+      "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=1600&q=80",
+      "images/cache/floating_raft-121f7fcb56.jpg",
+      "images/cache/lobster-5fc08549d7.jpg"
     ],
     "credit": "Seafood — Unsplash"
   },
   "street_food": {
     "urls": [
-      "images/cache/banh_canh-45fc45393e.jpg",
-      "images/cache/lobster-5fc08549d7.jpg",
-      "images/cache/banh_canh-cec6b50486.jpg",
-      "images/cache/banh_canh-449c90d5ad.jpg",
       "https://images.unsplash.com/photo-1600320254374-ce2d293c324e?w=1600&q=80",
       "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=1600&q=80",
       "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=1600&q=80",
-      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1600&q=80"
+      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1600&q=80",
+      "images/cache/banh_canh-45fc45393e.jpg",
+      "images/cache/lobster-5fc08549d7.jpg",
+      "images/cache/banh_canh-cec6b50486.jpg",
+      "images/cache/banh_canh-449c90d5ad.jpg"
     ],
     "credit": "Vietnamese street food — Unsplash"
   }
