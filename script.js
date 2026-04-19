@@ -27,16 +27,15 @@ const TILE_DETAILS = {
   'd4-eat':     { day: 4, kind: 'Eat',     label: 'Sông Cầu',              place: 'Sông Cầu, Phú Yên, Vietnam',                         coords: [13.5378, 109.2317], tip: 'Lobster capital of Vietnam. Any roadside seafood spot on QL1D through Sông Cầu will have live tôm hùm tanks — pick one, grill it, ~800k/kg.' },
   'd4-ride':    { day: 4, kind: 'Ride',    label: 'Tuy Hòa GO',            place: '',                                                   tip: 'Book Tuy Hòa GO — transparent prices, the driver will stop wherever you point. Expect ~1.2–1.5M VND for the full day transfer.' },
 
-  // DAY 5 — 19 May — Slow Quy Nhơn (NEW)
-  'd5-see':     { day: 5, kind: 'See',     label: 'Xuân Diệu',             place: 'Đường Xuân Diệu, Quy Nhơn, Vietnam',                 coords: [13.7732, 109.2319], tip: 'The waterfront promenade — walk it barefoot in the morning, coffee carts on the pavement, fishing boats drifting back in. Your easy-day anchor.' },
-  'd5-eat':     { day: 5, kind: 'Eat',     label: 'Ngô Văn Sở',            place: 'Ngô Văn Sở, Quy Nhơn, Vietnam',                      coords: [13.7671, 109.2252], tip: 'Whole-street food market. Grilled nem, tré (fermented pork), sugarcane juice. End at Chè Nhớ (134 Ngô Mây) for dessert — been there since 1990.' },
-  'd5-sip':     { day: 5, kind: 'Sip',     label: 'Surf Bar',              place: 'Surf Bar, Quy Nhơn Beach, Vietnam',                  coords: [13.7732, 109.2319], tip: 'Iconic beach cafe. Chairs in the sand, string lights after dark. Go at sunset.' },
+  // DAY 5 — 19 May — Hòn Khô
+  'd5-snorkel': { day: 5, kind: 'Snorkel', label: 'Hòn Khô',               place: 'Hòn Khô, Nhơn Hải, Quy Nhơn, Vietnam',               coords: [13.8071, 109.2929], tip: '“Tour tại bến” at the Nhơn Hải pier is ~350k VND and includes canoe, snorkel gear, seafood lunch, and a walk across the tidal stone bridge. Ask for a child-sized life jacket (áo phao trẻ em).' },
+  'd5-eat':     { day: 5, kind: 'Eat',     label: 'Nhơn Hải',              place: 'Nhơn Hải Village, Quy Nhơn, Vietnam',                coords: [13.8039, 109.2773], tip: 'Lunch in the village after the island — fresh snail and squid at any of the small family-run spots near the pier. Hương Dương Seafood is the highest-rated.' },
+  'd5-ride':    { day: 5, kind: 'Ride',    label: 'Bike day',              place: '',                                                   tip: 'Rent from the hotel or a shop on Xuân Diệu. ~120–150k/day. You’ll want it again tomorrow, so negotiate a 2-day rate.' },
 
-  // DAY 6 — 20 May — Hòn Khô morning, rest, observatory
-  'd6-snorkel': { day: 6, kind: 'Snorkel', label: 'Hòn Khô',               place: 'Hòn Khô, Nhơn Hải, Quy Nhơn, Vietnam',               coords: [13.8071, 109.2929], tip: '“Tour tại bến” at the Nhơn Hải pier is ~350k VND and includes canoe, snorkel gear, seafood lunch, and a walk across the tidal stone bridge. Ask for a child-sized life jacket (áo phao trẻ em).' },
-  'd6-eat':     { day: 6, kind: 'Eat',     label: 'Nhơn Hải',              place: 'Nhơn Hải Village, Quy Nhơn, Vietnam',                coords: [13.8039, 109.2773], tip: 'Lunch in the village after the island — fresh snail and squid at any of the small family-run spots near the pier. ~12:00–13:30.' },
-  'd6-chill':   { day: 6, kind: 'Rest',    label: 'Long afternoon',        place: '',                                                   tip: 'Ride back to the hotel by 14:00. Nap, pool, or the city beach — the afternoon is a deliberate blank. The goal is to be awake and clear for the observatory at 19:00.' },
-  'd6-star':    { day: 6, kind: 'Star',    label: 'Observatory',           place: 'ExploraScience Quy Nhơn, 10 Đại lộ Khoa học, Vietnam', coords: [13.7471, 109.2226], tip: 'Wednesday nights only — the ExploraScience Observatory runs a stargazing session 19:00–21:00 with high-powered telescopes. Book ahead at ticket.explorascience.vn (~120–150k). If the sky is cloudy, they cancel — have a backup dinner plan.' },
+  // DAY 6 — 20 May — Chill → Bãi Xép → ExploraScience
+  'd6-chill':   { day: 6, kind: 'Chill',   label: 'Morning rest',          place: '',                                                   tip: 'Pool, city beach, or a slow brunch on Xuân Diệu. The afternoon is a walk; tonight is the stars. Sleep in guilt-free.' },
+  'd6-wander':  { day: 6, kind: 'Wander',  label: 'Bãi Xép Village',       place: 'Bãi Xép Village, Ghềnh Ráng, Quy Nhơn, Vietnam',     coords: [13.7390, 109.2467], tip: 'A tiny fishing cove five minutes south of the city. Walk the sand, watch the thúng-chai (basket boats) come in, grab a drink at a beach bar. Low-key, no schedule.' },
+  'd6-visit':   { day: 6, kind: 'Visit',   label: 'ExploraScience',        place: 'ExploraScience Quy Nhơn, 10 Đại lộ Khoa học, Vietnam', coords: [13.7471, 109.2226], tip: 'Open Wed afternoon (14:00–17:30) and Wed night (19:00–21:00). Explore the 7 theme rooms + planetarium in the afternoon, then stay for the Observatory stargazing at 19:00. Book online at ticket.explorascience.vn (~120–150k). Cloudy skies cancel the telescope session.' },
 
   // DAY 7 — 21 May — All day at Trung Lương
   'd7-chill':   { day: 7, kind: 'Chill',   label: 'Trung Lương',           place: 'Trung Lương Beach, Cát Tiến, Bình Định, Vietnam',    coords: [13.9550, 109.2633], tip: 'Resort-style beach park — grass, colourful tents, a short path down to a protected crystal cove. Pay the entrance fee, claim a spot, and plant it all day.' },
@@ -128,41 +127,43 @@ const DAY_DETAILS = {
     ],
   },
   5: {
-    num: '05', date: '19 May · Tuesday', title: 'A <em>slow</em> day in Quy Nhơn.',
+    num: '05', date: '19 May · Tuesday', title: '<em>Hòn Khô</em> by canoe.',
     schedule: [
-      ['Morning', 'Xuân Diệu promenade walk; city beach.'],
-      ['Noon', 'Lunch anywhere walkable.'],
-      ['Late afternoon', 'Surf Bar, sand under your feet.'],
-      ['Evening', 'Ngô Văn Sở food street, then chè.'],
+      ['08:00', 'Ride to Nhơn Hải. Canoe, snorkel, walk the tidal stone bridge.'],
+      ['12:00', 'Lunch at Nhơn Hải village — snails, squid, fresh fish.'],
+      ['13:30', 'Ride back across the bridge to the city.'],
+      ['Evening', 'Quiet dinner in Quy Nhơn; early night.'],
     ],
     picks: [
-      { kind: 'Lunch', name: 'Bún cá Ngọc Liên', note: '379 Nguyễn Huệ. 4,000+ reviews.' },
-      { kind: 'Dinner', name: 'Gia Vỹ 2', note: 'Best bánh xèo tôm nhảy. 14 Diên Hồng.' },
-      { kind: 'Dessert', name: 'Chè Nhớ', note: '134 Ngô Mây. Since 1990.' },
+      { kind: 'Lunch', name: 'Hương Dương Seafood', note: 'Village favourite in Nhơn Hải.' },
+      { kind: 'Dinner', name: 'Bún cá Ngọc Liên', note: '379 Nguyễn Huệ. 4,000+ reviews.' },
+      { kind: 'Dinner alt.', name: 'Gia Vỹ 2', note: 'Best bánh xèo tôm nhảy. 14 Diên Hồng.' },
       { kind: 'Café', name: 'Adiuvat Coffee Roasters', note: 'Specialty beans. Nguyễn Huệ.' },
     ],
     logistics: [
-      { label: 'Tour', text: '<em>None</em>. A recovery day between the islands and the Wednesday stargazing.' },
-      { label: 'Transport', text: 'Walk or motorbike — everything is close.' },
+      { label: 'Tour', text: 'Hòn Khô pier tour at Nhơn Hải — <em>~350k VND</em>. Includes canoe, gear, lunch.' },
+      { label: 'Transport', text: 'Motorbike. Negotiate a 2-day rate — you’ll need it again tomorrow.' },
+      { label: 'Safety', text: 'Ask for a child-sized life jacket (<em>áo phao trẻ em</em>) before the boat leaves.' },
     ],
   },
   6: {
-    num: '06', date: '20 May · Wednesday', title: '<em>Hòn Khô</em>, then the stars.',
+    num: '06', date: '20 May · Wednesday', title: 'A <em>slow</em> morning, then the stars.',
     schedule: [
-      ['08:00', 'Ride to Nhơn Hải. Canoe, snorkel, walk the stone bridge.'],
-      ['12:00', 'Lunch at Nhơn Hải village.'],
-      ['13:30', 'Ride back — the afternoon is deliberately empty.'],
-      ['19:00', 'Observatory at ExploraScience — Wed only.'],
+      ['Morning', 'Sleep in. Pool or city beach. No agenda.'],
+      ['14:00', 'Ride south to Bãi Xép Village, Ghềnh Ráng.'],
+      ['16:30', 'Afternoon drink by the cove.'],
+      ['18:00', 'ExploraScience — 7 theme rooms + Science Show.'],
+      ['19:00', 'Observatory — Wed-night stargazing session.'],
     ],
     picks: [
-      { kind: 'Lunch', name: 'Hương Dương Seafood', note: 'Village favourite. Snails & squid.' },
-      { kind: 'Dinner', name: 'Something near the hotel', note: 'Keep it light before the observatory.' },
-      { kind: 'Pre-show', name: 'ExploraScience café', note: 'On-site. Arrive by 18:30.' },
+      { kind: 'Lunch', name: 'Wherever is close', note: 'Light — you’ll eat again later.' },
+      { kind: 'Sunset drink', name: 'Surf Bar / Bãi Xép', note: 'Chairs in the sand, string lights after dark.' },
+      { kind: 'Dinner', name: 'ExploraScience café', note: 'On-site, between museum and observatory.' },
     ],
     logistics: [
-      { label: 'Tour', text: 'Hòn Khô pier tour at Nhơn Hải — <em>~350k VND</em>. Includes canoe, gear, lunch.' },
-      { label: 'Observatory', text: 'Wednesday evenings 19:00–21:00 only. Book online at <em>ticket.explorascience.vn</em>. ~<em>120–150k</em>. Cancelled if overcast.' },
-      { label: 'Transport', text: 'Motorbike for the morning, Grab for the observatory if you’ve been drinking.' },
+      { label: 'Entry', text: 'Book ExploraScience online at <em>ticket.explorascience.vn</em>. ~<em>120–150k</em> per person.' },
+      { label: 'Observatory', text: 'Wed nights 19:00–21:00 only. Cancelled if overcast — have a backup dinner plan.' },
+      { label: 'Transport', text: 'Bike south; Grab back if tired.' },
     ],
   },
   7: {
@@ -219,8 +220,8 @@ const ROUTE_STOPS = [
   'd2-see', 'd2-cross',
   'd3-see', 'd3-wander',
   'd4-see', 'd4-swim',
-  'd5-see',
-  'd6-snorkel', 'd6-star',
+  'd5-snorkel',
+  'd6-wander', 'd6-visit',
   'd7-chill', 'd7-see',
   'd8-rest',
 ];
@@ -399,29 +400,23 @@ function buildRouteMap() {
   }).addTo(leafletMap);
 
   const group = L.featureGroup();
-  const latlngs = stops.map((s) => s.coords);
+  const perDayIndex = {};
 
-  L.polyline(latlngs, {
-    color: '#e9a66b',
-    weight: 2.5,
-    opacity: 0.85,
-    dashArray: '6 8',
-  }).addTo(group);
-
-  stops.forEach((s, i) => {
-    const num = i + 1;
+  stops.forEach((s) => {
+    perDayIndex[s.day] = (perDayIndex[s.day] || 0) + 1;
+    const code = `D${s.day}-${perDayIndex[s.day]}`;
     const marker = L.marker(s.coords, {
       icon: L.divIcon({
         className: 'pin',
-        html: `<span class="pin-num">${num}</span><span class="pin-dot"></span>`,
-        iconSize: [34, 44],
-        iconAnchor: [17, 42],
+        html: `<span class="pin-num">${code}</span><span class="pin-dot"></span>`,
+        iconSize: [54, 46],
+        iconAnchor: [27, 44],
       }),
-      title: `${num}. ${s.label}`,
+      title: `${code}. ${s.label}`,
     });
     const day = DAY_DETAILS[s.day];
     marker.bindPopup(
-      `<div class="pin-pop"><div class="pp-kicker">Day ${s.day} · ${day.date.split(' · ')[0]}</div><div class="pp-label">${s.label}</div><div class="pp-kind">${s.kind}</div><button class="pp-open" data-open-tile="${s.id}">See tile ↗</button></div>`
+      `<div class="pin-pop"><div class="pp-kicker">${code} · ${day.date.split(' · ')[0]}</div><div class="pp-label">${s.label}</div><div class="pp-kind">${s.kind}</div><button class="pp-open" data-open-tile="${s.id}">See tile ↗</button></div>`
     );
     marker.addTo(group);
   });
