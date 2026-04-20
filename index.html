@@ -354,7 +354,27 @@
   </div>
 </aside>
 
-<!-- ====== ROUTE MAP ====== -->
+<!-- ====== DESKTOP RAIL (map on splash, day info on day pages) ====== -->
+<aside class="rail" id="rail" data-mode="map" aria-hidden="false">
+  <div class="rail-pane rail-pane--map">
+    <header class="rail-head">
+      <span class="rail-kicker">The route</span>
+      <h3 class="rail-title-lg">Phú Yên → Đà Nẵng</h3>
+      <p class="rail-sub">13 stops · pins in day order</p>
+    </header>
+    <div class="rail-map" id="rail-map"></div>
+  </div>
+  <div class="rail-pane rail-pane--day">
+    <header class="rail-head rail-head--day">
+      <span class="sheet-num" id="rail-num"></span>
+      <span class="sheet-date" id="rail-date"></span>
+    </header>
+    <h3 class="rail-day-title" id="rail-title"></h3>
+    <div class="rail-body sheet-body" id="rail-body"></div>
+  </div>
+</aside>
+
+<!-- ====== ROUTE MAP (mobile modal) ====== -->
 <div class="route" id="route" aria-hidden="true">
   <div class="route-backdrop" data-route-close></div>
   <div class="route-panel">

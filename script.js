@@ -452,3 +452,114 @@ function closeRoute() {
 
 document.getElementById('open-route')?.addEventListener('click', openRoute);
 route.addEventListener('click', (e) => { if (e.target.matches('[data-route-close]')) closeRoute(); });
+
+// ============================ RAIL =======================================
+// Persistent right sidebar on desktop: map on splash, day info on day pages.
+const rail = document.getElementById('rail');
+const railNum = document.getElementById('rail-num');
+const railDate = document.getElementById('rail-date');
+const railTitleEl = document.getElementById('rail-title');
+const railBody = document.getElementById('rail-body');
+const railMapEl = document.getElementById('rail-map');
+let railMap = null;
+let activeRailDay = null;
+
+function renderRailDay(n) {
+  if (activeRailDay === n) return;
+  activeRailDay = n;
+  const d = DAY_DETAILS[n]; if (!d) return;
+  railNum.textContent = d.num;
+  railDate.textContent = d.date;
+  railTitleEl.innerHTML = d.title;
+  let html = '';
+  if (d.schedule?.length) {
+    html += '<section><h4>Hours</h4><div class="sheet-schedule">';
+    for (const [time, what] of d.schedule) html += `<div class="time">${time}</div><div class="what">${what}</div>`;
+    html += '</div></section>';
+  }
+  if (d.picks?.length) {
+    html += '<section><h4>Eat &amp; Drink</h4><div class="sheet-picks">';
+    for (const p of d.picks) html += `<div class="pick"><span class="pick-label">${p.kind}</span><span class="pick-name">${p.name}</span><span class="pick-note">${p.note}</span></div>`;
+    html += '</div></section>';
+  }
+  if (d.logistics?.length) {
+    html += '<section><h4>Logistics</h4><div class="sheet-logistics">';
+    for (const l of d.logistics) html += `<div class="logi"><span class="logi-label">${l.label}</span><span class="logi-text">${l.text}</span></div>`;
+    html += '</div></section>';
+  }
+  railBody.innerHTML = html;
+  railBody.parentElement.scrollTop = 0;
+}
+
+function buildRailMap() {
+  if (railMap || typeof L === 'undefined') return;
+  const stops = ROUTE_STOPS.map((id) => ({ id, ...TILE_DETAILS[id] })).filter((s) => s.coords);
+
+  railMap = L.map(railMapEl, { zoomControl: true, scrollWheelZoom: false });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OSM</a> · © <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19,
+  }).addTo(railMap);
+
+  const group = L.featureGroup();
+  const perDayIndex = {};
+  stops.forEach((s) => {
+    perDayIndex[s.day] = (perDayIndex[s.day] || 0) + 1;
+    const code = `D${s.day}-${perDayIndex[s.day]}`;
+    const marker = L.marker(s.coords, {
+      icon: L.divIcon({
+        className: 'pin',
+        html: `<span class="pin-num">${code}</span><span class="pin-dot"></span>`,
+        iconSize: [54, 46],
+        iconAnchor: [27, 44],
+      }),
+      title: `${code}. ${s.label}`,
+    });
+    const day = DAY_DETAILS[s.day];
+    marker.bindPopup(
+      `<div class="pin-pop"><div class="pp-kicker">${code} · ${day.date.split(' · ')[0]}</div><div class="pp-label">${s.label}</div><div class="pp-kind">${s.kind}</div><button class="pp-open" data-open-tile="${s.id}">See tile ↗</button></div>`
+    );
+    marker.addTo(group);
+  });
+  group.addTo(railMap);
+  railMap.fitBounds(group.getBounds().pad(0.12));
+
+  railMap.on('popupopen', (e) => {
+    const btn = e.popup.getElement().querySelector('[data-open-tile]');
+    if (btn) btn.addEventListener('click', () => openTile(btn.dataset.openTile));
+  });
+}
+
+const railMQ = window.matchMedia('(min-width: 1200px)');
+
+function initRail() {
+  if (!railMQ.matches) return;
+  buildRailMap();
+  if (railMap) setTimeout(() => railMap.invalidateSize(), 120);
+}
+
+if (railMQ.matches) {
+  requestAnimationFrame(initRail);
+} else {
+  railMQ.addEventListener?.('change', (ev) => { if (ev.matches) requestAnimationFrame(initRail); });
+}
+
+// Swap rail mode (map ↔ day) based on which section is most visible.
+const railIO = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (!e.isIntersecting || e.intersectionRatio < 0.55) return;
+    const el = e.target;
+    if (el.id === 'splash') {
+      rail.setAttribute('data-mode', 'map');
+      if (railMap) railMap.invalidateSize();
+    } else if (el.id.startsWith('day-')) {
+      const n = Number(el.id.slice(4));
+      renderRailDay(n);
+      rail.setAttribute('data-mode', 'day');
+    }
+  });
+}, { threshold: [0.55, 0.8] });
+
+railIO.observe(document.getElementById('splash'));
+document.querySelectorAll('.day').forEach((d) => railIO.observe(d));

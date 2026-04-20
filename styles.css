@@ -883,6 +883,99 @@ body.sheet-open { overflow: hidden; }
 }
 .pp-open:hover { border-color: var(--accent); color: var(--accent); }
 
+/* =========================================================
+   DESKTOP RAIL (persistent right sidebar ≥ 1200px)
+   ========================================================= */
+.rail { display: none; }
+
+@media (min-width: 1200px) {
+  :root { --rail-w: 420px; }
+  body { padding-right: var(--rail-w); }
+  .rail {
+    display: grid;
+    position: fixed;
+    top: 0; right: 0;
+    width: var(--rail-w);
+    height: 100vh;
+    height: 100svh;
+    background: #0e0a07;
+    border-left: 1px solid rgba(243, 230, 205, 0.08);
+    z-index: 50;
+    overflow: hidden;
+  }
+  .rail-pane {
+    grid-column: 1; grid-row: 1;
+    display: grid;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .rail[data-mode="map"] .rail-pane--map,
+  .rail[data-mode="day"] .rail-pane--day {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .rail-pane--map { grid-template-rows: auto 1fr; }
+  .rail-pane--day {
+    grid-template-rows: auto auto 1fr;
+    padding: clamp(24px, 2.8vw, 36px);
+    overflow-y: auto;
+  }
+  .rail-head {
+    padding: clamp(24px, 2.8vw, 32px) clamp(24px, 2.8vw, 32px) 18px;
+  }
+  .rail-head--day {
+    padding: 0 0 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .rail-kicker {
+    display: block;
+    font-size: 10px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .rail-title-lg {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(20px, 1.6vw, 28px);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .rail-sub {
+    font-size: 12px;
+    color: var(--ink-dim);
+    letter-spacing: .04em;
+  }
+  .rail-map {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+  .rail-day-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(24px, 2vw, 36px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 14px 0 20px;
+    text-wrap: balance;
+  }
+  .rail-day-title em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  /* Rail renders both; buttons on splash/day are redundant here. */
+  .route-btn, .day-more { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .splash-layer, .day-bg, .tile::before, .splash-word, .splash-dates, .splash-cue .dot {
     animation: none !important;
