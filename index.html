@@ -332,6 +332,7 @@
 
   <!-- COLOPHON -->
   <footer class="colophon">
+    <button class="route-btn colophon-prep" type="button" id="open-prep-foot">Prepare for the trip ↗</button>
     <p class="cred">Photography via Wikimedia Commons &amp; Unsplash. Routes &amp; notes from the family brief.</p>
     <p class="sig">Tuy Hòa → Quy Nhơn → Đà Nẵng · tám đêm chín ngày</p>
   </footer>
@@ -356,6 +357,7 @@
 
 <!-- ====== DESKTOP RAIL (map on splash, day info on day pages) ====== -->
 <aside class="rail" id="rail" data-mode="map" aria-hidden="false">
+  <button class="rail-prep" type="button" id="open-prep-rail">Prepare ↗</button>
   <div class="rail-pane rail-pane--map">
     <header class="rail-head">
       <span class="rail-kicker">The route</span>
@@ -390,6 +392,46 @@
       <button class="sheet-close" type="button" data-route-close aria-label="Close">×</button>
     </header>
     <div class="route-map" id="route-map"></div>
+  </div>
+</div>
+
+<!-- ====== PREPARE MODAL ====== -->
+<div class="prepare" id="prepare" aria-hidden="true">
+  <div class="prepare-backdrop" data-prep-close></div>
+  <div class="prepare-panel">
+    <header class="prepare-head">
+      <div>
+        <span class="prepare-kicker">Before you go</span>
+        <h3 class="prepare-title">Prepare</h3>
+        <p class="prepare-sub">Checklists &amp; backup picks</p>
+      </div>
+      <button class="sheet-close" type="button" data-prep-close aria-label="Close">×</button>
+    </header>
+    <nav class="prepare-tabs" role="tablist">
+      <button class="prepare-tab is-active" type="button" data-tab="check" role="tab" aria-selected="true">Checklist</button>
+      <button class="prepare-tab" type="button" data-tab="backup" role="tab" aria-selected="false">Back-up list</button>
+    </nav>
+    <div class="prepare-body">
+      <section class="prepare-section is-active" data-panel="check">
+        <div class="check-group" data-group="setup">
+          <header class="check-group-head">
+            <h4>Set up the trip</h4>
+            <button class="check-add" type="button" data-add="setup">+ Add</button>
+          </header>
+          <ul class="checklist" data-list="setup"></ul>
+        </div>
+        <div class="check-group" data-group="pack">
+          <header class="check-group-head">
+            <h4>Pack</h4>
+            <button class="check-add" type="button" data-add="pack">+ Add</button>
+          </header>
+          <ul class="checklist" data-list="pack"></ul>
+        </div>
+      </section>
+      <section class="prepare-section" data-panel="backup">
+        <div id="backup-content"></div>
+      </section>
+    </div>
   </div>
 </div>
 

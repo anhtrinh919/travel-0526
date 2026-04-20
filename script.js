@@ -638,3 +638,260 @@ try {
 railToggle?.addEventListener('click', () => {
   setRailCollapsed(!document.body.classList.contains('rail-collapsed'));
 });
+
+// ========================= PREPARE MODAL =================================
+const prepare = document.getElementById('prepare');
+
+const CHECKLIST_SEED = {
+  setup: [
+    'Book flight HAN → TBB (15 May)',
+    'Book flight DAD → HAN (23 May)',
+    'Book hotel in Tuy Hòa (3 nights, 15–17 May)',
+    'Book hotel in Quy Nhơn (4 nights, 18–21 May)',
+    'Book hotel in Đà Nẵng (1 night, 22 May)',
+    'Reserve motorbike in Tuy Hòa (16–17 May)',
+    'Reserve motorbike in Quy Nhơn — 2-day rate (19–20 May)',
+    'Book Tuy Hòa GO private car · Tuy Hòa → Quy Nhơn (18 May)',
+    'Book Hòn Khô pier tour at Nhơn Hải (~350k, 19 May)',
+    'Book ExploraScience + Observatory tickets (Wed 20 May night)',
+    'Book Quy Nhơn → Đà Nẵng transfer (car / bus / train, 22 May)',
+    'Check tide times for Hòn Yến (morning of 17 May)',
+    'Check weather forecast for stargazing (20 May — cloud cancels)',
+    'Withdraw VND cash before leaving (rafts & village spots are cash only)',
+  ],
+  pack: [
+    'Sunscreen (reef-safe)',
+    'Swimsuits ×2',
+    'Quick-dry towel',
+    'Light long-sleeve for motorbike rides',
+    'Sunglasses',
+    'Sandals + sneakers',
+    'Waterproof phone pouch',
+    'Portable charger + cable',
+    'Meds: motion sickness, paracetamol',
+    'Mosquito repellent',
+    'Hat / cap',
+    'Snorkel mask (optional — pier tour provides one)',
+  ],
+};
+
+const CK_KEY = (group) => `travel.checklist.${group}`;
+const uid = () => Math.random().toString(36).slice(2, 10);
+
+function loadList(group) {
+  try {
+    const raw = localStorage.getItem(CK_KEY(group));
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  const seeded = CHECKLIST_SEED[group].map((text) => ({ id: uid(), text, done: false }));
+  saveList(group, seeded);
+  return seeded;
+}
+function saveList(group, items) {
+  try { localStorage.setItem(CK_KEY(group), JSON.stringify(items)); } catch (e) {}
+}
+
+function renderChecklist(group) {
+  const items = loadList(group);
+  const ul = document.querySelector(`.checklist[data-list="${group}"]`);
+  if (!ul) return;
+  ul.innerHTML = '';
+  items.forEach((it, i) => {
+    const li = document.createElement('li');
+    li.className = 'check-item' + (it.done ? ' is-done' : '');
+    li.dataset.id = it.id;
+    li.innerHTML = `
+      <input type="checkbox" class="check-box" ${it.done ? 'checked' : ''} aria-label="Mark done">
+      <span class="check-text" contenteditable="true" spellcheck="false"></span>
+      <span class="check-actions">
+        <button class="check-btn" type="button" data-act="up" aria-label="Move up" ${i === 0 ? 'disabled style="opacity:.2;cursor:default"' : ''}>▲</button>
+        <button class="check-btn" type="button" data-act="down" aria-label="Move down" ${i === items.length - 1 ? 'disabled style="opacity:.2;cursor:default"' : ''}>▼</button>
+        <button class="check-btn" type="button" data-act="del" aria-label="Delete">×</button>
+      </span>`;
+    li.querySelector('.check-text').textContent = it.text;
+    ul.appendChild(li);
+  });
+}
+
+function mutate(group, fn) {
+  const items = loadList(group);
+  fn(items);
+  saveList(group, items);
+  renderChecklist(group);
+}
+
+document.querySelectorAll('.checklist').forEach((ul) => {
+  const group = ul.dataset.list;
+
+  ul.addEventListener('change', (e) => {
+    if (!e.target.classList.contains('check-box')) return;
+    const li = e.target.closest('.check-item');
+    mutate(group, (items) => {
+      const it = items.find((x) => x.id === li.dataset.id);
+      if (it) it.done = e.target.checked;
+    });
+  });
+
+  ul.addEventListener('click', (e) => {
+    const btn = e.target.closest('.check-btn');
+    if (!btn) return;
+    const li = btn.closest('.check-item');
+    const id = li.dataset.id;
+    const act = btn.dataset.act;
+    mutate(group, (items) => {
+      const idx = items.findIndex((x) => x.id === id);
+      if (idx < 0) return;
+      if (act === 'del') items.splice(idx, 1);
+      else if (act === 'up' && idx > 0) [items[idx - 1], items[idx]] = [items[idx], items[idx - 1]];
+      else if (act === 'down' && idx < items.length - 1) [items[idx], items[idx + 1]] = [items[idx + 1], items[idx]];
+    });
+  });
+
+  ul.addEventListener('blur', (e) => {
+    if (!e.target.classList.contains('check-text')) return;
+    const li = e.target.closest('.check-item');
+    const text = e.target.textContent.trim();
+    const items = loadList(group);
+    const it = items.find((x) => x.id === li.dataset.id);
+    if (!it) return;
+    if (!text) {
+      // empty text = delete
+      const idx = items.findIndex((x) => x.id === it.id);
+      items.splice(idx, 1);
+      saveList(group, items);
+      renderChecklist(group);
+    } else if (it.text !== text) {
+      it.text = text;
+      saveList(group, items);
+    }
+  }, true);
+
+  ul.addEventListener('keydown', (e) => {
+    if (!e.target.classList.contains('check-text')) return;
+    if (e.key === 'Enter') { e.preventDefault(); e.target.blur(); }
+  });
+});
+
+document.querySelectorAll('.check-add').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const group = btn.dataset.add;
+    const items = loadList(group);
+    items.push({ id: uid(), text: '', done: false });
+    saveList(group, items);
+    renderChecklist(group);
+    const ul = document.querySelector(`.checklist[data-list="${group}"]`);
+    const last = ul.lastElementChild?.querySelector('.check-text');
+    last?.focus();
+  });
+});
+
+// ---- Back-up list ----
+const BACKUP = [
+  { city: 'Tuy Hòa · Phú Yên', items: [
+    ['Bánh Mì Chấm Nguyễn Huệ', '94 Nguyễn Huệ'],
+    ['Bánh Canh Hẹ Thành Tùng', '53 Điện Biên Phủ'],
+    ['Quán Bà Tám (Ocean Tuna Eye)', '289 Lê Duẩn'],
+    ['Cơm Gà Tuyết Nhung', '189 Lê Thánh Tôn'],
+    ['Cơm Niêu Năm Ánh', '394 Hùng Vương'],
+    ['Nem Nướng Nhật Hoàng', '04 Trần Bình Trọng'],
+    ['Huy Tùng Coffee', '125 Nguyễn Trãi'],
+    ['Noon Concept', 'An Dương Vương'],
+    ['Bè nổi Vi Anh', 'Vũng Rô Bay'],
+    ['Bè nổi Thanh Niên', 'Vũng Rô Bay'],
+    ['Koi Cafe', 'An Dương Vương'],
+    ['Quán Tuấn (Lagoon Seafood)', 'Đầm Ô Loan'],
+    ['Nhà hàng Thúy Kiều', 'An Hải'],
+    ['Bún cá Đất Phú', '169 Lê Thánh Tôn'],
+    ['Cháo Hàu 373', '373 Nguyễn Huệ'],
+    ['Alice Tea Room', '28 Cần Vương'],
+    ['Wait Coffee', '79 Lương Văn Chánh'],
+    ['Quán Chóp Chài (Goat Hotpot)', 'Chóp Chài Mountain'],
+    ['Bánh Hỏi Lòng Heo Yến', '118 Hùng Vương'],
+    ['PHD Book & Coffee', 'City Center'],
+  ]},
+  { city: 'Quy Nhơn · Bình Định', items: [
+    ['Bếp Nhà Xứ Nẫu', '68 Nam Cao'],
+    ['Lẩu Cua Ông Minh', '29 Diên Hồng'],
+    ['Surf Bar', 'Xuân Diệu Beach'],
+    ['Hương Dương Seafood', 'Nhơn Hải Village'],
+    ['Bún cá Ngọc Liên', '379 Nguyễn Huệ'],
+    ['Gia Vỹ 2 (Bánh Xèo)', '14 Diên Hồng'],
+    ['Adiuvat Coffee Roasters', '57a Nguyễn Huệ'],
+    ['Nhà Hàng Cánh Quạt', 'Cát Tiến Area'],
+    ['Ngô Văn Sở Food Street', 'Ngô Văn Sở St'],
+    ['Chè Nhớ', '134 Ngô Mây'],
+    ['Marina Coffee', '05 Đô Đốc Bảo'],
+    ['Bốn Mùa (Four Seasons)', 'Xuân Diệu'],
+    ['Bánh Căn Cô Dư', '63/1 Nguyễn Huệ'],
+    ['Big Tree Bistro', 'Bãi Xép Village'],
+    ["Life's A Beach", 'Bãi Xép Village'],
+    ['East West Brewery', 'Xuân Diệu'],
+    ['Bún Chả Cá Phượng Tèo', '211 Nguyễn Huệ'],
+    ['Hải sản Chúc Xíu', 'Near Port'],
+    ['Bánh Hỏi Lòng Heo Mẫn', '76A Trần Phú'],
+    ['1990 Cafe', 'City Center'],
+  ]},
+  { city: 'Đà Nẵng', items: [
+    ['Mái Phố', 'K27A/2 Thái Phiên'],
+    ['Little Hanoi Egg Coffee', '65 Đỗ Bá'],
+    ["Bun Cha Quyen's House", '14 Lý Văn Tố'],
+    ['Eco Green Cafe & Bistro', '1 An Thượng 3'],
+    ['SIX ON SIX Cafe', '64 Bà Huyện Thanh Quan'],
+    ['Mỳ Quảng Bà Mua', '19 Trần Bình Trọng'],
+    ['Bánh Xèo Bà Dưỡng', 'K280/23 Hoàng Diệu'],
+    ['43 Factory Coffee', '422 Ngô Thì Sỹ'],
+    ['Cafe Long', '123 Lê Lợi'],
+    ['Thìa Gỗ Đà Nẵng', '53 Phan Thúc Duyện'],
+  ]},
+];
+
+function renderBackup() {
+  const host = document.getElementById('backup-content');
+  if (!host || host.dataset.built === '1') return;
+  let html = '';
+  BACKUP.forEach((g) => {
+    html += `<div class="backup-group"><header class="backup-group-head"><h4>${g.city}</h4><span class="backup-count">${g.items.length} spots</span></header><div class="backup-grid">`;
+    g.items.forEach(([name, addr]) => {
+      const q = encodeURIComponent(`${name} ${addr}`);
+      const href = `https://www.google.com/maps/search/?api=1&query=${q}`;
+      html += `<a class="backup-card" href="${href}" target="_blank" rel="noopener"><span class="backup-name">${name}</span><span class="backup-addr">${addr}</span></a>`;
+    });
+    html += `</div></div>`;
+  });
+  host.innerHTML = html;
+  host.dataset.built = '1';
+}
+
+function openPrep() {
+  renderChecklist('setup');
+  renderChecklist('pack');
+  renderBackup();
+  prepare.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('prep-open');
+}
+function closePrep() {
+  prepare.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('prep-open');
+}
+
+document.getElementById('open-prep-foot')?.addEventListener('click', openPrep);
+document.getElementById('open-prep-rail')?.addEventListener('click', openPrep);
+prepare.addEventListener('click', (e) => { if (e.target.matches('[data-prep-close]')) closePrep(); });
+
+document.querySelectorAll('.prepare-tab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+    document.querySelectorAll('.prepare-tab').forEach((t) => {
+      const on = t.dataset.tab === target;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', String(on));
+    });
+    document.querySelectorAll('.prepare-section').forEach((s) => {
+      s.classList.toggle('is-active', s.dataset.panel === target);
+    });
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && prepare.getAttribute('aria-hidden') === 'false') closePrep();
+});
