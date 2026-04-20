@@ -886,11 +886,16 @@ body.sheet-open { overflow: hidden; }
 /* =========================================================
    DESKTOP RAIL (persistent right sidebar ≥ 1200px)
    ========================================================= */
-.rail { display: none; }
+.rail, .rail-toggle { display: none; }
 
 @media (min-width: 1200px) {
   :root { --rail-w: 420px; }
-  body { padding-right: var(--rail-w); }
+  body {
+    padding-right: var(--rail-w);
+    transition: padding-right .4s cubic-bezier(.2,.7,.2,1);
+  }
+  body.rail-collapsed { --rail-w: 0px; }
+
   .rail {
     display: grid;
     position: fixed;
@@ -902,7 +907,47 @@ body.sheet-open { overflow: hidden; }
     border-left: 1px solid rgba(243, 230, 205, 0.08);
     z-index: 50;
     overflow: hidden;
+    box-shadow: -24px 0 48px -12px rgba(0, 0, 0, 0.55), -2px 0 10px rgba(0, 0, 0, 0.35);
+    transition: width .4s cubic-bezier(.2,.7,.2,1);
   }
+  body.rail-collapsed .rail {
+    box-shadow: none;
+  }
+
+  .rail-toggle {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 50%;
+    right: calc(var(--rail-w) + 10px);
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #0e0a07;
+    border: 1px solid rgba(243, 230, 205, 0.22);
+    color: var(--ink);
+    cursor: pointer;
+    z-index: 60;
+    font-family: var(--sans);
+    line-height: 1;
+    padding: 0;
+    box-shadow: -4px 6px 16px rgba(0,0,0,.4);
+    transition: right .4s cubic-bezier(.2,.7,.2,1), background .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .rail-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .rail-toggle-arrow {
+    font-size: 18px;
+    display: inline-block;
+    transition: transform .4s cubic-bezier(.2,.7,.2,1);
+  }
+  body.rail-collapsed .rail-toggle-arrow {
+    transform: rotate(180deg);
+  }
+
   .rail-pane {
     grid-column: 1; grid-row: 1;
     display: grid;
@@ -912,6 +957,11 @@ body.sheet-open { overflow: hidden; }
     overflow: hidden;
     min-height: 0;
   }
+  body.rail-collapsed .rail-pane { opacity: 0 !important; pointer-events: none; }
+
+  /* Fade content on day → day swap */
+  .rail-pane--day > * { transition: opacity .18s ease; }
+  .rail-pane--day.is-fading > * { opacity: 0; }
   .rail[data-mode="map"] .rail-pane--map,
   .rail[data-mode="day"] .rail-pane--day {
     opacity: 1;

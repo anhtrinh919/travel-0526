@@ -388,6 +388,39 @@ const route = document.getElementById('route');
 const routeMapEl = document.getElementById('route-map');
 let leafletMap = null;
 
+// Per-day dotted driving route via public OSRM; falls back to straight line.
+async function addDayRoutes(map) {
+  if (!map || typeof L === 'undefined') return;
+  const byDay = {};
+  ROUTE_STOPS.forEach((id) => {
+    const s = TILE_DETAILS[id];
+    if (!s?.coords) return;
+    (byDay[s.day] ||= []).push(s.coords);
+  });
+  await Promise.all(Object.keys(byDay).map(async (day) => {
+    const coords = byDay[day];
+    if (coords.length < 2) return;
+    let path = coords;
+    try {
+      const locs = coords.map(([lat, lng]) => `${lng},${lat}`).join(';');
+      const res = await fetch(`https://router.project-osrm.org/route/v1/driving/${locs}?overview=full&geometries=geojson`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.code === 'Ok' && data.routes?.[0]) {
+          path = data.routes[0].geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+        }
+      }
+    } catch (e) { /* fallback: straight line between stops */ }
+    L.polyline(path, {
+      color: '#e9a66b',
+      weight: 2.5,
+      opacity: 0.7,
+      dashArray: '2 7',
+      lineCap: 'round',
+    }).addTo(map);
+  }));
+}
+
 function buildRouteMap() {
   if (leafletMap || typeof L === 'undefined') return;
   const stops = ROUTE_STOPS.map((id) => ({ id, ...TILE_DETAILS[id] })).filter((s) => s.coords);
@@ -431,6 +464,8 @@ function buildRouteMap() {
       openTile(btn.dataset.openTile);
     });
   });
+
+  addDayRoutes(leafletMap);
 }
 
 function openRoute() {
@@ -464,8 +499,9 @@ const railMapEl = document.getElementById('rail-map');
 let railMap = null;
 let activeRailDay = null;
 
-function renderRailDay(n) {
-  if (activeRailDay === n) return;
+const railDayPane = document.querySelector('.rail-pane--day');
+
+function renderRailDayNow(n) {
   activeRailDay = n;
   const d = DAY_DETAILS[n]; if (!d) return;
   railNum.textContent = d.num;
@@ -491,11 +527,25 @@ function renderRailDay(n) {
   railBody.parentElement.scrollTop = 0;
 }
 
+function renderRailDay(n) {
+  if (activeRailDay === n) return;
+  // First render: skip the fade
+  if (activeRailDay === null || !railDayPane) {
+    renderRailDayNow(n);
+    return;
+  }
+  railDayPane.classList.add('is-fading');
+  setTimeout(() => {
+    renderRailDayNow(n);
+    requestAnimationFrame(() => railDayPane.classList.remove('is-fading'));
+  }, 160);
+}
+
 function buildRailMap() {
   if (railMap || typeof L === 'undefined') return;
   const stops = ROUTE_STOPS.map((id) => ({ id, ...TILE_DETAILS[id] })).filter((s) => s.coords);
 
-  railMap = L.map(railMapEl, { zoomControl: true, scrollWheelZoom: false });
+  railMap = L.map(railMapEl, { zoomControl: true, scrollWheelZoom: true });
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OSM</a> · © <a href="https://carto.com/">CARTO</a>',
     subdomains: 'abcd',
@@ -529,6 +579,8 @@ function buildRailMap() {
     const btn = e.popup.getElement().querySelector('[data-open-tile]');
     if (btn) btn.addEventListener('click', () => openTile(btn.dataset.openTile));
   });
+
+  addDayRoutes(railMap);
 }
 
 const railMQ = window.matchMedia('(min-width: 1200px)');
@@ -563,3 +615,26 @@ const railIO = new IntersectionObserver((entries) => {
 
 railIO.observe(document.getElementById('splash'));
 document.querySelectorAll('.day').forEach((d) => railIO.observe(d));
+
+// ====================== RAIL COLLAPSE TOGGLE =============================
+const RAIL_COLLAPSED_KEY = 'travel.rail.collapsed';
+const railToggle = document.getElementById('rail-toggle');
+
+function setRailCollapsed(collapsed) {
+  document.body.classList.toggle('rail-collapsed', collapsed);
+  if (railToggle) {
+    railToggle.setAttribute('aria-expanded', String(!collapsed));
+    railToggle.setAttribute('aria-label', collapsed ? 'Expand sidebar' : 'Collapse sidebar');
+  }
+  try { localStorage.setItem(RAIL_COLLAPSED_KEY, collapsed ? '1' : '0'); } catch (e) {}
+  // Leaflet needs a nudge after the width animation finishes.
+  if (railMap) setTimeout(() => railMap.invalidateSize(), 440);
+}
+
+try {
+  if (localStorage.getItem(RAIL_COLLAPSED_KEY) === '1') setRailCollapsed(true);
+} catch (e) {}
+
+railToggle?.addEventListener('click', () => {
+  setRailCollapsed(!document.body.classList.contains('rail-collapsed'));
+});
