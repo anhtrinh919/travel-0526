@@ -23,7 +23,7 @@
   <div class="splash-shade"></div>
   <header class="splash-meta">
     <span class="kicker">A coastal drift · Spring ’26</span>
-    <button class="route-btn" type="button" id="open-route">See the route ↗</button>
+    <a class="route-btn" href="#overview">Overview ↓</a>
   </header>
   <div class="splash-center">
     <h1 class="splash-title">
@@ -37,6 +37,104 @@
     <span class="dot"></span>
     <span class="cue-label">scroll</span>
   </footer>
+</section>
+
+<!-- ====== BIRD'S-EYE VIEW ====== -->
+<section class="overview" id="overview">
+  <header class="overview-head">
+    <span class="kicker">Bird’s-eye view</span>
+    <h2 class="overview-title">Nine days, <em>south to north</em>.</h2>
+    <p class="overview-sub">Phú Yên → Quy Nhơn → Đà Nẵng · 15 → 23 May · 16 stops</p>
+  </header>
+  <div class="overview-grid">
+    <ol class="overview-days">
+      <li><a class="od-card" href="#day-1">
+        <span class="od-num">01</span>
+        <div class="od-body">
+          <span class="od-meta">Fri 15 May · <strong>Tuy Hòa</strong></span>
+          <h4 class="od-title">Arrival.</h4>
+          <p class="od-idea">Tháp Nghinh Phong at golden hour, city beach, first dinner.</p>
+          <span class="od-tag">Taxi · walk</span>
+        </div>
+      </a></li>
+      <li><a class="od-card" href="#day-2">
+        <span class="od-num">02</span>
+        <div class="od-body">
+          <span class="od-meta">Sat 16 May · <strong>Tuy Hòa</strong></span>
+          <h4 class="od-title">South Phú Yên.</h4>
+          <p class="od-idea">Mũi Điện, Bãi Môn, Vũng Rô floating raft. Hòn Nưa optional.</p>
+          <span class="od-tag">Motorbike · boat</span>
+        </div>
+      </a></li>
+      <li><a class="od-card" href="#day-3">
+        <span class="od-num">03</span>
+        <div class="od-body">
+          <span class="od-meta">Sun 17 May · <strong>Tuy Hòa</strong></span>
+          <h4 class="od-title">North, tide-led.</h4>
+          <p class="od-idea">Gành Đá Đĩa, Ô Loan, Hòn Yến at low tide (~17:20), Bãi Xép if energy allows.</p>
+          <span class="od-tag">Motorbike</span>
+        </div>
+      </a></li>
+      <li><a class="od-card" href="#day-4">
+        <span class="od-num">04</span>
+        <div class="od-body">
+          <span class="od-meta">Mon 18 May · <strong>Quy Nhơn</strong></span>
+          <h4 class="od-title">Transfer, kept light.</h4>
+          <p class="od-idea">QL1D scenic coast via Sông Cầu. Optional Vịnh Hòa stop. Surf Bar in the afternoon.</p>
+          <span class="od-tag">Private car</span>
+        </div>
+      </a></li>
+      <li><a class="od-card" href="#day-5">
+        <span class="od-num">05</span>
+        <div class="od-body">
+          <span class="od-meta">Tue 19 May · <strong>Quy Nhơn</strong></span>
+          <h4 class="od-title">Hòn Khô island.</h4>
+          <p class="od-idea">Canoe, snorkel, tidal stone bridge if tide allows. Village lunch, early night.</p>
+          <span class="od-tag">Motorbike · canoe</span>
+        </div>
+      </a></li>
+      <li><a class="od-card" href="#day-6">
+        <span class="od-num">06</span>
+        <div class="od-body">
+          <span class="od-meta">Wed 20 May · <strong>Quy Nhơn</strong></span>
+          <h4 class="od-title">Slow, then the stars.</h4>
+          <p class="od-idea">Sleep-in morning, Ghềnh Ráng / Bãi Xép, ExploraScience, Wed-night Observatory.</p>
+          <span class="od-tag">Motorbike · Grab</span>
+        </div>
+      </a></li>
+      <li><a class="od-card" href="#day-7">
+        <span class="od-num">07</span>
+        <div class="od-body">
+          <span class="od-meta">Thu 21 May · <strong>Quy Nhơn</strong></span>
+          <h4 class="od-title">Trung Lương to Thị Nại.</h4>
+          <p class="od-idea">Swim at Trung Lương, lunch at Cát Tiến, sunset crossing of Thị Nại Bridge.</p>
+          <span class="od-tag">Motorbike</span>
+        </div>
+      </a></li>
+      <li><a class="od-card" href="#day-8">
+        <span class="od-num">08</span>
+        <div class="od-body">
+          <span class="od-meta">Fri 22 May · <strong>Đà Nẵng</strong></span>
+          <h4 class="od-title">North by road.</h4>
+          <p class="od-idea">6–7h transfer via QL1. Afternoon walk on Mỹ Khê. Nothing on the list.</p>
+          <span class="od-tag">Car · bus · train</span>
+        </div>
+      </a></li>
+      <li><a class="od-card" href="#day-9">
+        <span class="od-num">09</span>
+        <div class="od-body">
+          <span class="od-meta">Sat 23 May · <strong>Đà Nẵng</strong></span>
+          <h4 class="od-title">Home.</h4>
+          <p class="od-idea">Beach walk, one last cà phê, afternoon flight DAD → HAN.</p>
+          <span class="od-tag">Grab · taxi</span>
+        </div>
+      </a></li>
+    </ol>
+    <aside class="overview-map-wrap">
+      <div class="overview-map" id="overview-map"></div>
+      <p class="overview-map-sub">16 stops · pins in day order · tap to open</p>
+    </aside>
+  </div>
 </section>
 
 <main class="reel">
@@ -113,8 +211,8 @@
     </div>
   </section>
 
-  <!-- DAY 3 — May 17 — North Phú Yên -->
-  <section class="day" id="day-3" data-img="bai_xep_yellow">
+  <!-- DAY 3 — May 17 — North Phú Yên, tide-led -->
+  <section class="day" id="day-3" data-img="ganh_da_dia">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
@@ -122,35 +220,35 @@
       <span class="date">17 May · Sunday</span>
     </div>
     <div class="day-title">
-      <h2>North, to the <em>yellow flowers</em>.</h2>
+      <h2>North, <em>tide-led</em>.</h2>
       <button class="day-more" type="button" data-day="3">Full day ↗</button>
     </div>
     <div class="tiles">
-      <article class="tile" data-tile="d3-see" data-img="hon_yen">
+      <article class="tile" data-tile="d3-rocks" data-img="ganh_da_dia">
         <span class="t-kicker">See</span>
-        <span class="t-label">Hòn Yến</span>
-        <span class="t-sub">Low-tide coral garden</span>
+        <span class="t-label">Gành Đá Đĩa</span>
+        <span class="t-sub">Honeycomb basalt · morning</span>
       </article>
       <article class="tile" data-tile="d3-eat" data-img="eat-seafood">
         <span class="t-kicker">Eat</span>
         <span class="t-label">Đầm Ô Loan</span>
         <span class="t-sub">Blood cockles on the lagoon</span>
       </article>
-      <article class="tile" data-tile="d3-wander" data-img="bai_xep_yellow">
-        <span class="t-kicker">Wander</span>
-        <span class="t-label">Bãi Xép</span>
-        <span class="t-sub">The film’s cliffs</span>
+      <article class="tile" data-tile="d3-see" data-img="hon_yen">
+        <span class="t-kicker">Wade</span>
+        <span class="t-label">Hòn Yến</span>
+        <span class="t-sub">Low tide ~17:20 · coral</span>
       </article>
-      <article class="tile" data-tile="d3-ride" data-img="move-bike2">
-        <span class="t-kicker">Ride</span>
-        <span class="t-label">Solo</span>
-        <span class="t-sub">No tour needed</span>
+      <article class="tile" data-tile="d3-wander" data-img="bai_xep_yellow">
+        <span class="t-kicker">Optional</span>
+        <span class="t-label">Bãi Xép</span>
+        <span class="t-sub">Sunset, if energy allows</span>
       </article>
     </div>
   </section>
 
-  <!-- DAY 4 — May 18 — Transfer to Quy Nhơn -->
-  <section class="day" id="day-4" data-img="ganh_da_dia">
+  <!-- DAY 4 — May 18 — Transfer to Quy Nhơn, kept light -->
+  <section class="day" id="day-4" data-img="vinh_hoa">
     <div class="day-bg"></div>
     <div class="day-shade"></div>
     <div class="day-head">
@@ -158,29 +256,29 @@
       <span class="date">18 May · Monday</span>
     </div>
     <div class="day-title">
-      <h2>The <em>basalt</em> coast to Quy Nhơn.</h2>
+      <h2>A <em>slow</em> coast to Quy Nhơn.</h2>
       <button class="day-more" type="button" data-day="4">Full day ↗</button>
     </div>
     <div class="tiles">
-      <article class="tile" data-tile="d4-see" data-img="ganh_da_dia">
-        <span class="t-kicker">See</span>
-        <span class="t-label">Gành Đá Đĩa</span>
-        <span class="t-sub">Honeycomb sea stones</span>
+      <article class="tile" data-tile="d4-ride" data-img="move-car2">
+        <span class="t-kicker">Ride</span>
+        <span class="t-label">Tuy Hòa GO</span>
+        <span class="t-sub">Private car · mini-guide</span>
       </article>
       <article class="tile" data-tile="d4-swim" data-img="vinh_hoa">
-        <span class="t-kicker">Swim</span>
+        <span class="t-kicker">Stop</span>
         <span class="t-label">Vịnh Hòa</span>
-        <span class="t-sub">QL1D stopover</span>
+        <span class="t-sub">Optional QL1D dip</span>
       </article>
       <article class="tile" data-tile="d4-eat" data-img="eat-clay">
         <span class="t-kicker">Eat</span>
         <span class="t-label">Sông Cầu</span>
         <span class="t-sub">Lobster capital · lunch</span>
       </article>
-      <article class="tile" data-tile="d4-ride" data-img="move-car2">
-        <span class="t-kicker">Ride</span>
-        <span class="t-label">Tuy Hòa GO</span>
-        <span class="t-sub">Private car · mini-guide</span>
+      <article class="tile" data-tile="d4-sip" data-img="sip-cafe1">
+        <span class="t-kicker">Arrive</span>
+        <span class="t-label">Surf Bar</span>
+        <span class="t-sub">Sunset, sand, cold drink</span>
       </article>
     </div>
   </section>
@@ -355,17 +453,9 @@
   </div>
 </aside>
 
-<!-- ====== DESKTOP RAIL (map on splash, day info on day pages) ====== -->
-<aside class="rail" id="rail" data-mode="map" aria-hidden="false">
+<!-- ====== DESKTOP RAIL (day info on day pages only) ====== -->
+<aside class="rail" id="rail" data-mode="hide" aria-hidden="true">
   <button class="rail-prep" type="button" id="open-prep-rail">Prepare ↗</button>
-  <div class="rail-pane rail-pane--map">
-    <header class="rail-head">
-      <span class="rail-kicker">The route</span>
-      <h3 class="rail-title-lg">Phú Yên → Đà Nẵng</h3>
-      <p class="rail-sub">13 stops · pins in day order</p>
-    </header>
-    <div class="rail-map" id="rail-map"></div>
-  </div>
   <div class="rail-pane rail-pane--day">
     <header class="rail-head rail-head--day">
       <span class="sheet-num" id="rail-num"></span>
@@ -378,22 +468,6 @@
 <button class="rail-toggle" id="rail-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true">
   <span class="rail-toggle-arrow" aria-hidden="true">›</span>
 </button>
-
-<!-- ====== ROUTE MAP (mobile modal) ====== -->
-<div class="route" id="route" aria-hidden="true">
-  <div class="route-backdrop" data-route-close></div>
-  <div class="route-panel">
-    <header class="route-head">
-      <div>
-        <span class="route-kicker">The route</span>
-        <h3 class="route-title">Phú Yên → Quy Nhơn → Đà Nẵng</h3>
-        <p class="route-sub">15 → 23 May · pins in day order</p>
-      </div>
-      <button class="sheet-close" type="button" data-route-close aria-label="Close">×</button>
-    </header>
-    <div class="route-map" id="route-map"></div>
-  </div>
-</div>
 
 <!-- ====== PREPARE MODAL ====== -->
 <div class="prepare" id="prepare" aria-hidden="true">

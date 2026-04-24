@@ -209,7 +209,7 @@ img { max-width: 100%; display: block; }
 /* =========================================================
    REEL
    ========================================================= */
-.splash, .day { scroll-snap-align: start; scroll-snap-stop: always; }
+.splash, .day, .overview { scroll-snap-align: start; scroll-snap-stop: always; }
 .reel { display: block; }
 
 /* =========================================================
@@ -433,7 +433,7 @@ img { max-width: 100%; display: block; }
    ========================================================= */
 @media (max-width: 860px) {
   html { scroll-snap-type: none; }
-  .splash, .day { scroll-snap-align: none; }
+  .splash, .day, .overview { scroll-snap-align: none; }
   .day { grid-template-rows: auto auto auto; height: auto; min-height: 100svh; padding-top: 50px; padding-bottom: 40px; }
   .day-title { margin: 20px 0 10px; }
   .tiles { grid-template-columns: repeat(2, 1fr); }
@@ -713,72 +713,192 @@ body.sheet-open { overflow: hidden; }
 }
 
 /* =========================================================
-   ROUTE MAP
+   BIRD'S-EYE OVERVIEW (section, full viewport, after splash)
    ========================================================= */
-.route {
-  position: fixed;
-  inset: 0;
-  z-index: 110;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .35s ease;
-}
-.route[aria-hidden="false"] { opacity: 1; pointer-events: auto; }
-.route-backdrop {
-  position: absolute; inset: 0;
-  background: rgba(6, 4, 3, 0.82);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
-.route-panel {
-  position: absolute;
-  inset: clamp(16px, 4vh, 48px) clamp(16px, 4vw, 56px);
-  background: #0e0a07;
-  border-radius: 4px;
-  overflow: hidden;
+.overview {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(48px, 7vh, 96px) clamp(20px, 4vw, 64px);
+  background: linear-gradient(180deg, #0c0907 0%, #100c08 60%, #0b0907 100%);
   display: grid;
   grid-template-rows: auto 1fr;
-  transform: scale(.98);
-  opacity: 0;
-  transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .35s ease;
-}
-.route[aria-hidden="false"] .route-panel {
-  transform: scale(1); opacity: 1;
+  gap: clamp(24px, 4vh, 48px);
+  scroll-snap-align: start;
 }
 
-.route-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: clamp(20px, 3vw, 36px);
-  border-bottom: 1px solid rgba(243, 230, 205, 0.08);
-  gap: 16px;
+.overview-head {
+  max-width: var(--max);
+  margin: 0 auto;
+  width: 100%;
+  text-align: left;
 }
-.route-kicker {
+.overview-head .kicker {
   display: block;
-  font-size: 10px;
-  letter-spacing: .3em;
-  text-transform: uppercase;
+  margin-bottom: 14px;
   color: var(--accent);
-  margin-bottom: 8px;
 }
-.route-title {
+.overview-title {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(22px, 2.6vw, 34px);
+  font-size: clamp(36px, 6vw, 76px);
+  line-height: 1.02;
   letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 4px;
+  color: var(--ink);
+  margin-bottom: 10px;
+  text-wrap: balance;
 }
-.route-sub {
-  font-size: 12px;
+.overview-title em {
+  color: var(--accent);
+  font-style: italic;
+}
+.overview-sub {
   color: var(--ink-dim);
-  letter-spacing: .05em;
+  font-size: clamp(13px, 1.1vw, 15px);
+  letter-spacing: .04em;
 }
 
-.route-map {
-  background: #0a0806;
+.overview-grid {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(24px, 3vw, 56px);
+  align-items: stretch;
+  min-height: 0;
+}
+
+.overview-days {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  max-height: 72vh;
+  overflow-y: auto;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(243, 230, 205, 0.2) transparent;
+}
+.overview-days::-webkit-scrollbar { width: 6px; }
+.overview-days::-webkit-scrollbar-thumb { background: rgba(243, 230, 205, 0.16); border-radius: 3px; }
+
+.od-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(14px, 1.6vw, 22px);
+  align-items: center;
+  padding: clamp(14px, 1.6vw, 20px) clamp(16px, 2vw, 24px);
+  border: 1px solid rgba(243, 230, 205, 0.10);
+  border-radius: 6px;
+  background: rgba(243, 230, 205, 0.025);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.od-card:hover {
+  border-color: rgba(233, 166, 107, 0.5);
+  background: rgba(233, 166, 107, 0.05);
+  transform: translateX(2px);
+}
+.od-num {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(34px, 3.4vw, 48px);
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.od-body {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.od-meta {
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.od-meta strong {
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: .18em;
+}
+.od-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 2px 0 2px;
+}
+.od-idea {
+  font-size: clamp(12.5px, 1vw, 14px);
+  color: var(--ink-dim);
+  line-height: 1.45;
+}
+.od-tag {
+  display: inline-flex;
+  align-self: start;
+  padding: 3px 10px;
+  margin-top: 8px;
+  border: 1px solid rgba(243, 230, 205, 0.14);
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  width: max-content;
+}
+
+.overview-map-wrap {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 10px;
+  min-height: 52vh;
+}
+.overview-map {
+  width: 100%;
   height: 100%;
+  min-height: 420px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0a0806;
+  border: 1px solid rgba(243, 230, 205, 0.08);
+}
+.overview-map-sub {
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .overview {
+    padding: clamp(40px, 6vh, 72px) 20px;
+    scroll-snap-align: start;
+    min-height: auto;
+  }
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .overview-days {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+  .overview-map-wrap {
+    order: -1;
+    min-height: auto;
+  }
+  .overview-map {
+    min-height: 340px;
+    height: 52vh;
+  }
 }
 
 /* Leaflet pin restyle */
@@ -908,10 +1028,24 @@ body.sheet-open { overflow: hidden; }
     z-index: 50;
     overflow: hidden;
     box-shadow: -24px 0 48px -12px rgba(0, 0, 0, 0.55), -2px 0 10px rgba(0, 0, 0, 0.35);
-    transition: width .4s cubic-bezier(.2,.7,.2,1);
+    transition: width .4s cubic-bezier(.2,.7,.2,1), transform .35s cubic-bezier(.2,.7,.2,1), opacity .3s ease;
   }
   body.rail-collapsed .rail {
     box-shadow: none;
+  }
+  /* Splash and overview own the hero — slide the rail off-screen there. */
+  .rail[data-mode="hide"] {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  body:has(#rail[data-mode="hide"]) {
+    padding-right: 0;
+  }
+  body:has(#rail[data-mode="hide"]) .rail-toggle {
+    opacity: 0;
+    pointer-events: none;
+    right: 10px;
   }
 
   .rail-toggle {
@@ -962,51 +1096,20 @@ body.sheet-open { overflow: hidden; }
   /* Fade content on day → day swap */
   .rail-pane--day > * { transition: opacity .18s ease; }
   .rail-pane--day.is-fading > * { opacity: 0; }
-  .rail[data-mode="map"] .rail-pane--map,
   .rail[data-mode="day"] .rail-pane--day {
     opacity: 1;
     pointer-events: auto;
   }
-  .rail-pane--map { grid-template-rows: auto 1fr; }
   .rail-pane--day {
     grid-template-rows: auto auto 1fr;
     padding: clamp(24px, 2.8vw, 36px);
     overflow-y: auto;
-  }
-  .rail-head {
-    padding: clamp(24px, 2.8vw, 32px) clamp(24px, 2.8vw, 32px) 18px;
   }
   .rail-head--day {
     padding: 0 0 4px;
     display: flex;
     align-items: baseline;
     gap: 14px;
-  }
-  .rail-kicker {
-    display: block;
-    font-size: 10px;
-    letter-spacing: .3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 10px;
-  }
-  .rail-title-lg {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: clamp(20px, 1.6vw, 28px);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin-bottom: 6px;
-  }
-  .rail-sub {
-    font-size: 12px;
-    color: var(--ink-dim);
-    letter-spacing: .04em;
-  }
-  .rail-map {
-    width: 100%;
-    height: 100%;
-    min-height: 0;
   }
   .rail-day-title {
     font-family: var(--serif);
@@ -1022,8 +1125,8 @@ body.sheet-open { overflow: hidden; }
     font-style: italic;
   }
 
-  /* Rail renders both; buttons on splash/day are redundant here. */
-  .route-btn, .day-more { display: none; }
+  /* Day rail replaces the per-day "Full day ↗" button on desktop. */
+  .day-more { display: none; }
 }
 
 /* =========================================================

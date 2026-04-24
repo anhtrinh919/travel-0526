@@ -15,17 +15,17 @@ const TILE_DETAILS = {
   'd2-eat':     { day: 2, kind: 'Eat',     label: 'Bè nổi Vũng Rô',        place: 'Bè nổi Vi Anh, Vũng Rô, Phú Yên, Vietnam',           coords: [12.8668, 109.4134], tip: 'Floating raft — pick your seafood from the underwater cages. Prawns and oysters are the move. Cash only.' },
   'd2-ride':    { day: 2, kind: 'Ride',    label: 'Coastal loop',          place: '',                                                   tip: 'Back via the coastal road, not QL1. Longer by 30 minutes but hugs the cliffs. Fuel up before you leave the bay.' },
 
-  // DAY 3 — 17 May — North Phú Yên
-  'd3-see':     { day: 3, kind: 'See',     label: 'Hòn Yến',               place: 'Hòn Yến, Tuy An, Phú Yên, Vietnam',                  coords: [13.3192, 109.2744], tip: 'Time it to low tide — you can walk out to the coral garden when the sea pulls back. Check tides that morning before you ride.' },
-  'd3-eat':     { day: 3, kind: 'Eat',     label: 'Đầm Ô Loan',            place: 'Đầm Ô Loan, Tuy An, Phú Yên, Vietnam',               coords: [13.2797, 109.2922], tip: 'Order sò huyết (blood cockles) and a whole steamed grouper. The restaurants on stilts over the lagoon all serve the same thing — pick one with a breeze.' },
-  'd3-wander':  { day: 3, kind: 'Wander',  label: 'Bãi Xép',               place: 'Bãi Xép, An Chấn, Phú Yên, Vietnam',                 coords: [13.2101, 109.2683], tip: 'The filming location from Tôi thấy hoa vàng trên cỏ xanh. Park at the top, the path down is short but steep. Golden hour is the whole point.' },
-  'd3-ride':    { day: 3, kind: 'Ride',    label: 'Solo',                  place: '',                                                   tip: 'Everything today is navigable on Google Maps. No tour needed — you’ll save half a day and most of the cost.' },
+  // DAY 3 — 17 May — North Phú Yên, tide-led
+  'd3-rocks':   { day: 3, kind: 'See',     label: 'Gành Đá Đĩa',           place: 'Gành Đá Đĩa, An Ninh Đông, Phú Yên, Vietnam',        coords: [13.6505, 109.3075], tip: 'Honeycomb basalt columns on the open sea. Arrive before 10am — tour buses show up by noon, and the morning light on the black stone is the shot. The walk down is steep but short.' },
+  'd3-eat':     { day: 3, kind: 'Eat',     label: 'Đầm Ô Loan',            place: 'Đầm Ô Loan, Tuy An, Phú Yên, Vietnam',               coords: [13.2797, 109.2922], tip: 'Order sò huyết (blood cockles) and a whole steamed grouper. The restaurants on stilts over the lagoon all serve the same thing — pick Quán Tuấn or Nhà hàng Thúy Kiều, with a breeze.' },
+  'd3-see':     { day: 3, kind: 'Wade',    label: 'Hòn Yến',               place: 'Hòn Yến, Tuy An, Phú Yên, Vietnam',                  coords: [13.3192, 109.2744], tip: 'Low tide is the whole point — the coral garden only appears when the sea pulls back. On Sun 17 May 2026 the window is in the late afternoon, target ~17:20. Bring water shoes.' },
+  'd3-wander':  { day: 3, kind: 'Wander',  label: 'Bãi Xép (Phú Yên)',     place: 'Bãi Xép, An Chấn, Phú Yên, Vietnam',                 coords: [13.2101, 109.2683], tip: 'Optional sunset stop on the ride home — the filming location from Tôi thấy hoa vàng trên cỏ xanh. Skip it if Hòn Yến ran long or you are tired; the real reward today is the tide.' },
 
-  // DAY 4 — 18 May — Transfer to Quy Nhơn
-  'd4-see':     { day: 4, kind: 'See',     label: 'Gành Đá Đĩa',           place: 'Gành Đá Đĩa, An Ninh Đông, Phú Yên, Vietnam',        coords: [13.6505, 109.3075], tip: 'The hexagonal basalt columns are best at low tide when you can step all the way down. Arrive before 10am — tour buses show up by noon.' },
-  'd4-swim':    { day: 4, kind: 'Swim',    label: 'Vịnh Hòa',              place: 'Vịnh Hòa Beach, Xuân Thọ, Phú Yên, Vietnam',         coords: [13.5131, 109.2856], tip: 'Quiet stretch off QL1D. Almost no facilities — good reason to stop, swim, eat a packed lunch, and move on.' },
-  'd4-eat':     { day: 4, kind: 'Eat',     label: 'Sông Cầu',              place: 'Sông Cầu, Phú Yên, Vietnam',                         coords: [13.5378, 109.2317], tip: 'Lobster capital of Vietnam. Any roadside seafood spot on QL1D through Sông Cầu will have live tôm hùm tanks — pick one, grill it, ~800k/kg.' },
-  'd4-ride':    { day: 4, kind: 'Ride',    label: 'Tuy Hòa GO',            place: '',                                                   tip: 'Book Tuy Hòa GO — transparent prices, the driver will stop wherever you point. Expect ~1.2–1.5M VND for the full day transfer.' },
+  // DAY 4 — 18 May — Transfer to Quy Nhơn, kept light
+  'd4-ride':    { day: 4, kind: 'Ride',    label: 'Tuy Hòa GO',            place: '',                                                   tip: 'Book Tuy Hòa GO (tuyhoago.com) — transparent prices, the driver doubles as a mini-guide and will stop wherever you point. ~1.2–1.5M VND for the day. Leave around 09:00 so the afternoon in Quy Nhơn is still usable.' },
+  'd4-swim':    { day: 4, kind: 'Stop',    label: 'Vịnh Hòa',              place: 'Vịnh Hòa Beach, Xuân Thọ, Phú Yên, Vietnam',         coords: [13.5131, 109.2856], tip: 'Optional short stop off QL1D — quiet stretch, almost no facilities. Good for a leg-stretch and a quick dip. Skip it if you want the lighter version of this day.' },
+  'd4-eat':     { day: 4, kind: 'Eat',     label: 'Sông Cầu',              place: 'Sông Cầu, Phú Yên, Vietnam',                         coords: [13.5378, 109.2317], tip: 'Lobster capital of Vietnam — halfway between Tuy Hòa and Quy Nhơn. Quán Hải Sản Gành Đỏ is a reliable roadside pick. Any spot on QL1D with live tôm hùm tanks is the move.' },
+  'd4-sip':     { day: 4, kind: 'Arrive',  label: 'Surf Bar',              place: 'Surf Bar, Xuân Diệu Beach, Quy Nhơn, Vietnam',       coords: [13.7717, 109.2318], tip: 'Iconic beach cafe right on the sand of Xuân Diệu. Arrive mid-to-late afternoon, order a cold drink, watch the city beach fill up at sunset. No reservations needed.' },
 
   // DAY 5 — 19 May — Hòn Khô
   'd5-snorkel': { day: 5, kind: 'Snorkel', label: 'Hòn Khô',               place: 'Hòn Khô, Nhơn Hải, Quy Nhơn, Vietnam',               coords: [13.8071, 109.2929], tip: '“Tour tại bến” at the Nhơn Hải pier is ~350k VND and includes canoe, snorkel gear, seafood lunch, and a walk across the tidal stone bridge. Ask for a child-sized life jacket (áo phao trẻ em).' },
@@ -91,11 +91,13 @@ const DAY_DETAILS = {
     ],
   },
   3: {
-    num: '03', date: '17 May · Sunday', title: 'North, to the <em>yellow flowers</em>.',
+    num: '03', date: '17 May · Sunday', title: 'North, <em>tide-led</em>.',
     schedule: [
-      ['08:30', 'Hòn Yến — low-tide coral garden.'],
-      ['12:00', 'Đầm Ô Loan lunch on the lagoon.'],
-      ['15:30', 'Bãi Xép cliffs — the film’s yellow-flower hills.'],
+      ['08:30', 'Ride north to Gành Đá Đĩa — honeycomb basalt columns.'],
+      ['10:30', 'Coastal stops or a coffee break, in no hurry.'],
+      ['12:00', 'Lunch at Đầm Ô Loan on the lagoon.'],
+      ['15:30', 'Hòn Yến — walk onto the coral at low tide (target ~17:20).'],
+      ['After 17:30', 'Bãi Xép cliffs for sunset — only if energy allows.'],
     ],
     picks: [
       { kind: 'Lunch', name: 'Quán Tuấn', note: 'On Ô Loan lagoon — blood cockles.' },
@@ -104,26 +106,29 @@ const DAY_DETAILS = {
       { kind: 'Café', name: 'Alice — Tea Room', note: 'Garden villa. An Dương Vương.' },
     ],
     logistics: [
-      { label: 'Tour', text: '<em>Alone</em>. Navigable by Google Maps.' },
-      { label: 'Transport', text: 'Motorbike.' },
+      { label: 'Pacing', text: 'Follow the <em>tide</em>, not a fixed schedule. Hòn Yến’s coral only shows at low tide.' },
+      { label: 'Gear', text: 'Water shoes or sandals for the coral and rocks.' },
+      { label: 'Transport', text: 'Motorbike. Navigable by Google Maps — no tour needed.' },
     ],
   },
   4: {
-    num: '04', date: '18 May · Monday', title: 'The <em>basalt</em> coast to Quy Nhơn.',
+    num: '04', date: '18 May · Monday', title: 'A <em>slow</em> coast to Quy Nhơn.',
     schedule: [
-      ['09:00', 'Gành Đá Đĩa — honeycomb basalt columns.'],
-      ['11:30', 'QL1D scenic drive; stop at Vịnh Hòa.'],
+      ['09:00', 'Leave Tuy Hòa in the Tuy Hòa GO private car.'],
+      ['10:30', 'Scenic QL1D drive. Optional short stop at Vịnh Hòa beach.'],
+      ['12:30', 'Lunch at Sông Cầu — lobster capital.'],
       ['15:00', 'Arrive Quy Nhơn, check in.'],
+      ['Late afternoon', 'Easy beach walk, drink at Surf Bar on Xuân Diệu.'],
     ],
     picks: [
-      { kind: 'Lunch', name: 'Quán Hải Sản Gành Đỏ', note: 'Sông Cầu — lobster capital of Vietnam.' },
+      { kind: 'Lunch', name: 'Quán Hải Sản Gành Đỏ', note: 'Sông Cầu halfway stop.' },
       { kind: 'Dinner', name: 'Bếp Nhà Xứ Nẫu', note: 'Garden-home dining. 68 Nam Cao. 4.7★.' },
       { kind: 'Dinner alt.', name: 'Lẩu Cua Ông Minh', note: 'Famous crab hotpot. 29 Diên Hồng.' },
-      { kind: 'Café', name: 'Surf Bar', note: 'Iconic beach cafe at sunset.' },
+      { kind: 'Sip', name: 'Surf Bar', note: 'Iconic beach cafe at sunset. Xuân Diệu.' },
     ],
     logistics: [
-      { label: 'Tour', text: '<em>Private car</em> — driver doubles as mini-guide.' },
-      { label: 'Transport', text: 'Book <em>Tuy Hòa GO</em>. Transparent online prices.' },
+      { label: 'Tour', text: 'Book <em>Tuy Hòa GO</em>. Transparent online prices; ~<em>1.2–1.5M VND</em> for the day.' },
+      { label: 'Pacing', text: 'Gành Đá Đĩa moved to Day 3, so today stays light — don’t add detours.' },
     ],
   },
   5: {
@@ -150,29 +155,30 @@ const DAY_DETAILS = {
     num: '06', date: '20 May · Wednesday', title: 'A <em>slow</em> morning, then the stars.',
     schedule: [
       ['Morning', 'Sleep in. Pool or city beach. No agenda.'],
-      ['14:00', 'Ride south to Bãi Xép Village, Ghềnh Ráng.'],
-      ['16:30', 'Afternoon drink by the cove.'],
+      ['14:00', 'Ride south to the Ghềnh Ráng / Bãi Xép area.'],
+      ['16:30', 'Afternoon drink by the cove, or back if tired.'],
       ['18:00', 'ExploraScience — 7 theme rooms + Science Show.'],
-      ['19:00', 'Observatory — Wed-night stargazing session.'],
+      ['19:00 – 21:00', 'Observatory — Wed-night stargazing.'],
     ],
     picks: [
-      { kind: 'Lunch', name: 'Wherever is close', note: 'Light — you’ll eat again later.' },
+      { kind: 'Lunch', name: 'Wherever is close', note: 'Light — near the hotel.' },
       { kind: 'Sunset drink', name: 'Surf Bar / Bãi Xép', note: 'Chairs in the sand, string lights after dark.' },
       { kind: 'Dinner', name: 'ExploraScience café', note: 'On-site, between museum and observatory.' },
     ],
     logistics: [
       { label: 'Entry', text: 'Book ExploraScience online at <em>ticket.explorascience.vn</em>. ~<em>120–150k</em> per person.' },
-      { label: 'Observatory', text: 'Wed nights 19:00–21:00 only. Cancelled if overcast — have a backup dinner plan.' },
-      { label: 'Transport', text: 'Bike south; Grab back if tired.' },
+      { label: 'Observatory', text: 'Wednesday and Saturday nights only, 19:00–21:00. Cancelled if overcast — have a backup dinner plan.' },
+      { label: 'Mood', text: 'Protect this as the <em>recovery</em> day of the trip.' },
     ],
   },
   7: {
-    num: '07', date: '21 May · Thursday', title: 'All day at <em>Trung Lương</em>.',
+    num: '07', date: '21 May · Thursday', title: '<em>Trung Lương</em> to Thị Nại.',
     schedule: [
-      ['09:30', 'Ride north to Trung Lương Outdoor Area.'],
-      ['12:00', 'Lunch at Cát Tiến (Nhà hàng Cánh Quạt).'],
-      ['13:30', 'Back to Trung Lương. Nap, swim, repeat.'],
-      ['16:30', 'Ride home via Thị Nại Bridge at sunset.'],
+      ['09:00', 'Ride north to Trung Lương Outdoor Area.'],
+      ['10:00 – 12:00', 'Swim, beach, rest.'],
+      ['12:00', 'Lunch at Cát Tiến — Nhà hàng Cánh Quạt.'],
+      ['13:30', 'Back to Trung Lương, or head home slowly if too hot.'],
+      ['16:30', 'Ride home via Thị Nại Bridge for the lagoon view.'],
     ],
     picks: [
       { kind: 'Lunch', name: 'Nhà hàng Cánh Quạt', note: 'Airy seafood under the wind turbines, Cát Tiến.' },
@@ -180,24 +186,25 @@ const DAY_DETAILS = {
       { kind: 'Café', name: 'Marina Coffee', note: 'If you still have energy. 05 Đô Đốc Bảo.' },
     ],
     logistics: [
-      { label: 'Entry', text: 'Pay the Trung Lương entrance fee on arrival (~<em>50k / person</em>).' },
-      { label: 'Transport', text: 'Motorbike. Last bike day — return the rental by evening.' },
-      { label: 'Route', text: 'On the way home, cross <em>Thị Nại Bridge</em> for the sunset view over the lagoon.' },
+      { label: 'Entry', text: 'Trung Lương entrance fee (~<em>50k / person</em>).' },
+      { label: 'Transport', text: 'Motorbike — <em>last bike day</em>. Return the rental by evening.' },
+      { label: 'Bridge', text: 'Don’t stop halfway on Thị Nại Bridge — enjoy the view while crossing, or pull over at a legal viewpoint before/after.' },
+      { label: 'Heat plan', text: 'If the day is very hot, pick either Trung Lương or Cát Tiến — not both.' },
     ],
   },
   8: {
     num: '08', date: '22 May · Friday', title: 'North to <em>Đà Nẵng</em>.',
     schedule: [
-      ['Morning', 'Transfer Quy Nhơn → Đà Nẵng.'],
-      ['Afternoon', 'Check in, nap, find water.'],
-      ['Evening', 'Walk the beach. No plans.'],
+      ['Morning', 'Transfer Quy Nhơn → Đà Nẵng via QL1.'],
+      ['Afternoon', 'Check in, find water, walk Mỹ Khê.'],
+      ['Evening', 'No plans. Seafood near the hotel.'],
     ],
     picks: [
       { kind: 'Tonight', name: 'Something near Mỹ Khê.', note: 'Skip the research. Pick a seafood spot on arrival.' },
     ],
     logistics: [
-      { label: 'Transport', text: 'Private car ~6 hours via QL1; open-bus or train also work.' },
-      { label: 'Mood', text: '<em>Nothing on the list.</em>' },
+      { label: 'Transport', text: 'Private car, open-bus, or train. Assume <em>6–7 hours</em>, not exactly 6.' },
+      { label: 'Timing', text: 'Book the <em>morning</em> slot so the afternoon is still usable.' },
     ],
   },
   9: {
@@ -213,16 +220,16 @@ const DAY_DETAILS = {
   },
 };
 
-// Activity-only tiles (no eat/sip/move/ride) for the route overview map,
-// in strict day order. One pin per place.
+// Map stops for the bird's-eye overview, in strict day order. Matches the
+// "Route overview" table in tuy-hoa-quy-nhon-da-nang-updated.md (16 stops).
 const ROUTE_STOPS = [
   'd1-see',
-  'd2-see', 'd2-cross',
-  'd3-see', 'd3-wander',
-  'd4-see', 'd4-swim',
+  'd2-see', 'd2-eat', 'd2-cross',
+  'd3-rocks', 'd3-eat', 'd3-see', 'd3-wander',
+  'd4-swim',
   'd5-snorkel',
   'd6-wander', 'd6-visit',
-  'd7-chill', 'd7-see',
+  'd7-chill', 'd7-eat', 'd7-see',
   'd8-rest',
 ];
 
@@ -377,16 +384,13 @@ document.querySelectorAll('.tile[data-tile]').forEach((tile) => {
 
 sheet.addEventListener('click', (e) => { if (e.target.matches('[data-close]')) closeSheet(); });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    if (sheet.getAttribute('aria-hidden') === 'false') closeSheet();
-    if (route.getAttribute('aria-hidden') === 'false') closeRoute();
-  }
+  if (e.key === 'Escape' && sheet.getAttribute('aria-hidden') === 'false') closeSheet();
 });
 
-// ========================== ROUTE MAP ====================================
-const route = document.getElementById('route');
-const routeMapEl = document.getElementById('route-map');
-let leafletMap = null;
+// ========================== OVERVIEW MAP =================================
+// Single Leaflet map, lives in the bird's-eye section after the splash.
+const overviewMapEl = document.getElementById('overview-map');
+let overviewMap = null;
 
 // Per-day dotted driving route via public OSRM; falls back to straight line.
 async function addDayRoutes(map) {
@@ -421,16 +425,16 @@ async function addDayRoutes(map) {
   }));
 }
 
-function buildRouteMap() {
-  if (leafletMap || typeof L === 'undefined') return;
+function buildOverviewMap() {
+  if (overviewMap || !overviewMapEl || typeof L === 'undefined') return;
   const stops = ROUTE_STOPS.map((id) => ({ id, ...TILE_DETAILS[id] })).filter((s) => s.coords);
 
-  leafletMap = L.map(routeMapEl, { zoomControl: true, scrollWheelZoom: true });
+  overviewMap = L.map(overviewMapEl, { zoomControl: true, scrollWheelZoom: true });
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OSM</a> · © <a href="https://carto.com/">CARTO</a>',
     subdomains: 'abcd',
     maxZoom: 19,
-  }).addTo(leafletMap);
+  }).addTo(overviewMap);
 
   const group = L.featureGroup();
   const perDayIndex = {};
@@ -454,49 +458,39 @@ function buildRouteMap() {
     marker.addTo(group);
   });
 
-  group.addTo(leafletMap);
-  leafletMap.fitBounds(group.getBounds().pad(0.12));
+  group.addTo(overviewMap);
+  overviewMap.fitBounds(group.getBounds().pad(0.12));
 
-  leafletMap.on('popupopen', (e) => {
+  overviewMap.on('popupopen', (e) => {
     const btn = e.popup.getElement().querySelector('[data-open-tile]');
-    if (btn) btn.addEventListener('click', () => {
-      closeRoute();
-      openTile(btn.dataset.openTile);
-    });
+    if (btn) btn.addEventListener('click', () => openTile(btn.dataset.openTile));
   });
 
-  addDayRoutes(leafletMap);
+  addDayRoutes(overviewMap);
 }
 
-function openRoute() {
-  route.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('sheet-open');
-  // Leaflet can't compute size of a hidden container — wait a tick, then init.
+// Build lazily once the overview scrolls into view — Leaflet needs a sized
+// container, and the section is below the splash on first load.
+const overviewIO = new IntersectionObserver((entries) => {
+  if (!entries.some((e) => e.isIntersecting)) return;
   requestAnimationFrame(() => {
-    buildRouteMap();
-    if (leafletMap) setTimeout(() => leafletMap.invalidateSize(), 100);
+    buildOverviewMap();
+    if (overviewMap) setTimeout(() => overviewMap.invalidateSize(), 100);
   });
-}
-
-function closeRoute() {
-  route.setAttribute('aria-hidden', 'true');
-  if (!sheet.getAttribute('aria-hidden') || sheet.getAttribute('aria-hidden') === 'true') {
-    document.body.classList.remove('sheet-open');
-  }
-}
-
-document.getElementById('open-route')?.addEventListener('click', openRoute);
-route.addEventListener('click', (e) => { if (e.target.matches('[data-route-close]')) closeRoute(); });
+  overviewIO.disconnect();
+}, { threshold: 0.15 });
+const overviewSection = document.getElementById('overview');
+if (overviewSection) overviewIO.observe(overviewSection);
 
 // ============================ RAIL =======================================
-// Persistent right sidebar on desktop: map on splash, day info on day pages.
+// Persistent right sidebar on desktop. Shows day info when a day section is
+// in view; hides on the splash and on the bird's-eye overview (the overview
+// owns its own map, so the rail has nothing useful to show there).
 const rail = document.getElementById('rail');
 const railNum = document.getElementById('rail-num');
 const railDate = document.getElementById('rail-date');
 const railTitleEl = document.getElementById('rail-title');
 const railBody = document.getElementById('rail-body');
-const railMapEl = document.getElementById('rail-map');
-let railMap = null;
 let activeRailDay = null;
 
 const railDayPane = document.querySelector('.rail-pane--day');
@@ -541,79 +535,27 @@ function renderRailDay(n) {
   }, 160);
 }
 
-function buildRailMap() {
-  if (railMap || typeof L === 'undefined') return;
-  const stops = ROUTE_STOPS.map((id) => ({ id, ...TILE_DETAILS[id] })).filter((s) => s.coords);
-
-  railMap = L.map(railMapEl, { zoomControl: true, scrollWheelZoom: true });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OSM</a> · © <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19,
-  }).addTo(railMap);
-
-  const group = L.featureGroup();
-  const perDayIndex = {};
-  stops.forEach((s) => {
-    perDayIndex[s.day] = (perDayIndex[s.day] || 0) + 1;
-    const code = `D${s.day}-${perDayIndex[s.day]}`;
-    const marker = L.marker(s.coords, {
-      icon: L.divIcon({
-        className: 'pin',
-        html: `<span class="pin-num">${code}</span><span class="pin-dot"></span>`,
-        iconSize: [54, 46],
-        iconAnchor: [27, 44],
-      }),
-      title: `${code}. ${s.label}`,
-    });
-    const day = DAY_DETAILS[s.day];
-    marker.bindPopup(
-      `<div class="pin-pop"><div class="pp-kicker">${code} · ${day.date.split(' · ')[0]}</div><div class="pp-label">${s.label}</div><div class="pp-kind">${s.kind}</div><button class="pp-open" data-open-tile="${s.id}">See tile ↗</button></div>`
-    );
-    marker.addTo(group);
-  });
-  group.addTo(railMap);
-  railMap.fitBounds(group.getBounds().pad(0.12));
-
-  railMap.on('popupopen', (e) => {
-    const btn = e.popup.getElement().querySelector('[data-open-tile]');
-    if (btn) btn.addEventListener('click', () => openTile(btn.dataset.openTile));
-  });
-
-  addDayRoutes(railMap);
-}
-
-const railMQ = window.matchMedia('(min-width: 1200px)');
-
-function initRail() {
-  if (!railMQ.matches) return;
-  buildRailMap();
-  if (railMap) setTimeout(() => railMap.invalidateSize(), 120);
-}
-
-if (railMQ.matches) {
-  requestAnimationFrame(initRail);
-} else {
-  railMQ.addEventListener?.('change', (ev) => { if (ev.matches) requestAnimationFrame(initRail); });
-}
-
-// Swap rail mode (map ↔ day) based on which section is most visible.
+// Show/hide the rail based on which section is most visible:
+// splash or overview  → hide
+// day-N               → show, populated with that day's info
 const railIO = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
     if (!e.isIntersecting || e.intersectionRatio < 0.55) return;
     const el = e.target;
-    if (el.id === 'splash') {
-      rail.setAttribute('data-mode', 'map');
-      if (railMap) railMap.invalidateSize();
+    if (el.id === 'splash' || el.id === 'overview') {
+      rail.setAttribute('data-mode', 'hide');
+      rail.setAttribute('aria-hidden', 'true');
     } else if (el.id.startsWith('day-')) {
       const n = Number(el.id.slice(4));
       renderRailDay(n);
       rail.setAttribute('data-mode', 'day');
+      rail.setAttribute('aria-hidden', 'false');
     }
   });
 }, { threshold: [0.55, 0.8] });
 
 railIO.observe(document.getElementById('splash'));
+if (overviewSection) railIO.observe(overviewSection);
 document.querySelectorAll('.day').forEach((d) => railIO.observe(d));
 
 // ====================== RAIL COLLAPSE TOGGLE =============================
@@ -627,8 +569,6 @@ function setRailCollapsed(collapsed) {
     railToggle.setAttribute('aria-label', collapsed ? 'Expand sidebar' : 'Collapse sidebar');
   }
   try { localStorage.setItem(RAIL_COLLAPSED_KEY, collapsed ? '1' : '0'); } catch (e) {}
-  // Leaflet needs a nudge after the width animation finishes.
-  if (railMap) setTimeout(() => railMap.invalidateSize(), 440);
 }
 
 try {
